@@ -1,5 +1,4 @@
-```
-python:Koch_Curve
+```python:Koch_Curve
 import math
 
 def KochCurv(n, p1, p2):
