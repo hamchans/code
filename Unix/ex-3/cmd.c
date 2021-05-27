@@ -5,7 +5,9 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include "mysh.h"
+
 extern char pathname[PATHNAME_SIZE];
+
 struct command_table cmd_tbl[] = {
     {"cd", my_cd},
     {"pwd", my_pwd},

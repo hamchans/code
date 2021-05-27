@@ -11,13 +11,11 @@ void gettoken(int *argc, char *argv[], char *lbuf)
     while ((ch = getc(stdin)) != '\n') {
         switch (ch) {
             case '-':
-                if (*(token-1) != ' ') {
+                if (*(token - 1) != ' ') {
                     *token++ = ch;
                     break;
                 }
-                //ungetc(ch, stdin);
                 *token++ = ' ';
-                //ch = getc(stdin);
                 *token++ = ch;
                 break;
             case ' ':
@@ -28,29 +26,24 @@ void gettoken(int *argc, char *argv[], char *lbuf)
             case '<':
             case '&':
             case ';':
-                    //ungetc(ch, stdin);
-                    *token++ = ' ';
-                    //ch = getc(stdin);
-                    *token++ = ch;
-                    // *token++ = ' ';
-                    //ch = getc(stdin);
-                    while ((ch = getc(stdin)) == ' ');
-                    if (ch == '\n')
-                        break;
-                    switch (ch) {
-                        case '|':
-                        case '>':
-                        case '<':
-                        case '&':
-                            *token++ = ch;
-                            *token++ = ' ';
-                            break;
-                        default:
-                            *token++ = ' ';
-                            *token++ = ch;
-                            break;
-                    }
+                *token++ = ' ';
+                *token++ = ch;
+                while ((ch = getc(stdin)) == ' ');
+                if (ch == '\n')
                     break;
+                switch (ch) {
+                    case '|':
+                    case '>':
+                    case '<':
+                    case '&':
+                        *token++ = ch;
+                        *token++ = ' ';
+                        break;
+                    default:
+                        *token++ = ' ';
+                        *token++ = ch;
+                        break;
+                }
                 break;
             default:
                 *token++ = ch;
