@@ -25,6 +25,6 @@ void setargs(int *argc, char *argv[], char *lbuf);
 
 void my_cd(int argc, char *argv[]);
 void my_pwd(int argc, char *argv[]);
-void my_ls(int argc, char *argv[]);
+//void my_ls(int argc, char *argv[]);
 void my_exit(int argc, char *argv[]);
-void exec_cmd(int argc, char *argv[]);
+void exec_b_cmd(int argc, char *argv[]);

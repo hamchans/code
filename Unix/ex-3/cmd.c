@@ -4,26 +4,30 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <sys/types.h>
 #include "mysh.h"
 
 extern char pathname[PATHNAME_SIZE];
 
-struct command_table cmd_tbl[] = {
+struct command_table b_cmd_tbl[] = {
     {"cd", my_cd},
     {"pwd", my_pwd},
-    {"ls", my_ls},
     {"exit", my_exit},
     {NULL, NULL}
 };
 
 void my_cd(int argc, char *argv[])
 {
+    int count = 0;
+    while (argv[count] != NULL)
+        count++;
+
     struct stat st;
 
-    if (argc == 1) {
+    if (count == 1) {
         chdir(ROOT_DIRECTORY);
         return;
-    } else if (argc == 2) {
+    } else if (count == 2) {
         char *dir = argv[1];
 
         if (stat(dir, &st) != 0) {
@@ -42,15 +46,17 @@ void my_cd(int argc, char *argv[])
                     return;
             }
         }
-    } else if (argc >= 3) {
+    } else if (count >= 3) {
         fprintf(stderr, "cd: string not in pwd: %s\n", argv[1]);
         return;
     }
+
     return;
 }
 
 void my_pwd(int argc, char *argv[])
 {
+    //execvp("/bin/pwd", argv);
     if (argc == 1) {
         getcwd(pathname, PATHNAME_SIZE);
         printf("%s\n", pathname);
@@ -62,66 +68,22 @@ void my_pwd(int argc, char *argv[])
     return;
 }
 
-void my_ls(int argc, char *argv[]) //directory only
-{
-    int i;
-    DIR *dp;
-    struct dirent *dir;
-    char *pathname[PATHNAME_SIZE];
-    int pathc = 0;
-
-    if (argc == 1)
-        pathname[pathc++] = ".";
-    else if (argc >= 2) {
-        if (argv[1][0] == '-') {
-            if (argc == 2)
-                pathname[pathc++] = ".";
-            for (i=2; i<argc; i++)
-                pathname[pathc++] = argv[i];
-        } else {
-            for (i=1; i<argc; i++)
-                pathname[pathc++] = argv[i];
-        }
-    }
-
-    for (i=0; i<pathc; i++) {
-        if ((dp = opendir(pathname[i])) == NULL ) {
-            fprintf(stderr, "ls: %s: No such file\n", pathname[i]);
-            return;
-        }
-
-        if (pathc != 1)
-            printf("%s:\n", pathname[i]);
-
-        while ((dir = readdir(dp)) != NULL) {
-            if (dir->d_ino == 0)
-                continue;
-
-            (void)printf("%s\n", dir->d_name);
-        }
-        if (i != pathc - 1)
-            printf("\n");
-
-        (void)closedir(dp);
-    }
-    return;
-}
-
 void my_exit(int argc, char *argv[])
 {
     exit(0);
     return;
 }
 
-void exec_cmd(int argc, char *argv[])
+void exec_b_cmd(int argc, char *argv[])
 {
     struct command_table *p;
-    for (p = cmd_tbl; p->cmd; p++) {
+    for (p = b_cmd_tbl; p->cmd; p++) {
         if (strcmp(argv[0], p->cmd) == 0) {
             (*p->func)(argc, argv);
             break;
         }
     }
     if (p->cmd == NULL)
-        fprintf(stderr, "mysh: command not found: %s\n", argv[0]);
+        execvp(argv[0], argv);
+        //fprintf(stderr, "mysh: command not found: %s\n", argv[0]);
 }

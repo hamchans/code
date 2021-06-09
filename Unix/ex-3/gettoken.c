@@ -6,6 +6,7 @@
 
 void gettoken(int *argc, char *argv[], char *lbuf)
 {
+    int pc = 1;
     char ch;
     char *token = lbuf;
     while ((ch = getc(stdin)) != '\n') {
@@ -28,7 +29,8 @@ void gettoken(int *argc, char *argv[], char *lbuf)
             case ';':
                 *token++ = ' ';
                 *token++ = ch;
-                while ((ch = getc(stdin)) == ' ');
+                //while ((ch = getc(stdin)) == ' ');
+                ch = getc(stdin);
                 if (ch == '\n')
                     break;
                 switch (ch) {
