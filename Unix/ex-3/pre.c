@@ -63,7 +63,7 @@ int main()
                         wait(&status);
                     }
                 }
-            } else if (rdlc != 0 && rdrc == 0) {
+            } else if (rdlc != 0 && rdrc == 0) { //<<
                 struct command_table *p;
                 for (p = b_cmd_tbl; p->cmd; p++) {
                     if (strcmp(argv[0], p->cmd) == 0) {
@@ -96,7 +96,7 @@ int main()
                         wait(&status);
                     }
                 }
-            } else if (rdrc != 0 && rdlc == 0) {
+            } else if (rdrc != 0 && rdlc == 0) { //>>
                 struct command_table *p;
                 for (p = b_cmd_tbl; p->cmd; p++) {
                     if (strcmp(argv[0], p->cmd) == 0) {
@@ -127,13 +127,14 @@ int main()
             }
         }
 
-        for (i=0; i<pc+1 && pc!=0; i++) {
-            if (i != pc) //if not last conmand then create pipe
+        for (i=0; i<pc+1 && pc!=0; i++) { //exist pipe
+            printf("%d, %d\n", i, pc);
+            //if (i != pc) //if not last conmand then create pipe
                 pipe(pfd[i]);
 
             //execvp(argv[pl[i]+1], argv + pl[i] + 1);
 
-            if (rdll[rdlcnt] < pl[i] && rdll[rdlcnt] != -1) {
+            if (rdll[rdlcnt] < pl[i] && rdll[rdlcnt] != -1) { //<<
                 //<<
                 struct command_table *p;
                 for (p = b_cmd_tbl; p->cmd; p++) {
@@ -190,7 +191,7 @@ int main()
                     }
                 }
                 rdlcnt++;
-            } else if (rdrl[rdrcnt] < pl[i] && rdrl[rdrcnt] != -1) {
+            } else if (rdrl[rdrcnt] < pl[i] && rdrl[rdrcnt] != -1) { //>>
                 //>>
                 struct command_table *p;
                 for (p = b_cmd_tbl; p->cmd; p++) {
@@ -249,6 +250,7 @@ int main()
                     }
                 }
                 if (p->cmd == NULL) {
+                    printf("BBB\n");
 
                     if ((pid = fork()) < 0) { //error
                         perror("fork");
