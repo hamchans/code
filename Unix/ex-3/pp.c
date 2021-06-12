@@ -18,7 +18,6 @@ int main()
     extern char pathname[PATHNAME_SIZE];
     memset(pathname, '\0', PATHNAME_SIZE);
     extern struct command_table b_cmd_tbl[];
-    void *sig;
 
     while (1) {
         int fd;
@@ -37,19 +36,16 @@ int main()
         //left1[0] = -1, left2[0] = -1, right1[0] = -1, right2[0] = -1;
         int l1 = 0, l2 = 0, r1 = 0, r2 = 0;
 
-        //struct sigaction *act, *oldact;
-
         setargs(&argc, argv, lbuf);
         printf("mysh$ ");
-
-        //sig = sigaction(SIGINT, act, oldact);
-
+/*
         int rc = 0;
         struct sigaction act;
 
         memset(&act, 0, sizeof(act));
-        act.sa_handler = exit_process;
+        act.sa_handler = ignore;
         act.sa_flags = SA_RESETHAND;
+        */
 /*
         rc = sigaction(SIGINT, &act, NULL);
         if(rc < 0) {

@@ -12,6 +12,8 @@
 
 extern char pathname[PATHNAME_SIZE];
 
+//volatile sig_atomic_t shutdown_flag = 1;
+
 struct command_table b_cmd_tbl[] = {
     {"cd", my_cd},
     {"pwd", my_pwd},
@@ -109,11 +111,13 @@ void my_dup(int i, int pipe_count, int pfd[9][2])
 
 void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2], int i, int redirect, int redirect_location[10], int rd_num)
 {
+    int wstatus;
+
     int rc = 0;
     struct sigaction act;
 
     memset(&act, 0, sizeof(act));
-    act.sa_handler = exit_process;
+    act.sa_handler = ignore;
     act.sa_flags = SA_RESETHAND;
 
     rc = sigaction(SIGINT, &act, NULL);
@@ -136,12 +140,65 @@ void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2]
             perror("fork");
             exit(EXIT_FAILURE);
         } else if (pid == 0) { //child
+            printf("child1\n");
             my_redirect(argc, argv, fd, redirect, redirect_location, rd_num);
+            printf("child2\n");
 
             execvp(argv[pipe_locate_num + 1], argv + pipe_locate_num + 1);
+            printf("child3\n");
 
             exit(EXIT_SUCCESS);
+
+
+/*
+            int count = 0;
+
+            struct sigaction sigterm_action;
+            memset(&sigterm_action, 0, sizeof(sigterm_action));
+            sigterm_action.sa_handler = &cleanupRoutine;
+            sigterm_action.sa_flags = 0;
+
+            // Mask other signals from interrupting SIGTERM handler
+            if (sigfillset(&sigterm_action.sa_mask) != 0)
+            {
+                perror("sigfillset");
+                exit(EXIT_FAILURE);
+            }
+            // Register SIGTERM handler
+            if (sigaction(SIGTERM, &sigterm_action, NULL) != 0)
+            {
+                perror("sigaction SIGTERM");
+                exit(EXIT_FAILURE);
+            }
+
+            while (shutdown_flag) {
+                count += 1;
+            }
+            printf("count = %d\n", count);
+
+            exit(EXIT_SUCCESS);
+*/
+
+
         } else { //parent
+
+            int status = -1;
+            wait(&status);
+
+            if (status == -1) {
+                int ret = kill(pid, SIGKILL);
+                if (ret == -1) {
+                    perror("kill");
+                    exit(EXIT_FAILURE);
+                }
+                if (waitpid(pid, &wstatus, WUNTRACED | WCONTINUED) == -1) {
+                    perror("waitpid");
+                    exit(EXIT_FAILURE);
+                }
+            }
+
+            printf("parent\n");
+
             if (i == 0) {
                 int status;
                 wait(&status);
@@ -177,12 +234,17 @@ void my_redirect(int argc, char *argv[], int *fd, int redirect, int redirect_loc
         dup2(*fd, 0);
         close(*fd);
     } else if (redirect == 0) {
-        ;
+
     }
 }
 
-void exit_process()
+void ignore()
 {
-    fprintf(stderr, "Exit normally.\n");
-    exit(0);
+
 }
+/*
+void cleanupRoutine(int signal_number)
+{
+    shutdown_flag = 0;
+}
+*/
