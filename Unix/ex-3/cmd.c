@@ -11,8 +11,15 @@
 #include "mysh.h"
 
 extern char pathname[PATHNAME_SIZE];
+extern char **environ;
 
-//volatile sig_atomic_t shutdown_flag = 1;
+void proc_exit()
+{
+    extern int bg;
+    printf("\n[%d]  +done \t %d", bg, getpid());
+    printf("\nmysh$ ");
+    exit(0);
+}
 
 struct command_table b_cmd_tbl[] = {
     {"cd", my_cd},
@@ -61,7 +68,6 @@ void my_cd(int argc, char *argv[])
 
 void my_pwd(int argc, char *argv[])
 {
-    //execvp("/bin/pwd", argv);
     if (argc == 1) {
         getcwd(pathname, PATHNAME_SIZE);
         printf("%s\n", pathname);
@@ -77,20 +83,6 @@ void my_exit(int argc, char *argv[])
 {
     exit(0);
     return;
-}
-
-void exec_b_cmd(int argc, char *argv[])
-{
-    struct command_table *p;
-    for (p = b_cmd_tbl; p->cmd; p++) {
-        if (strcmp(argv[0], p->cmd) == 0) {
-            (*p->func)(argc, argv);
-            break;
-        }
-    }
-    if (p->cmd == NULL)
-        execvp(argv[0], argv);
-        //fprintf(stderr, "mysh: command not found: %s\n", argv[0]);
 }
 
 void my_dup(int i, int pipe_count, int pfd[9][2])
@@ -109,9 +101,15 @@ void my_dup(int i, int pipe_count, int pfd[9][2])
     }
 }
 
-void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2], int i, int redirect, int redirect_location[10], int rd_num)
+void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2], int i, int redirect, int redirect_location[10], int rd_num, int bg)
 {
+    extern char *cmd_path[CMD_PATH_LEN + 1];
+
+    cmd_path[0] = "/bin/";
+
     int wstatus;
+    int pid2;
+    int cmd_len;
 
     int rc = 0;
     struct sigaction act;
@@ -140,70 +138,66 @@ void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2]
             perror("fork");
             exit(EXIT_FAILURE);
         } else if (pid == 0) { //child
-            printf("child1\n");
             my_redirect(argc, argv, fd, redirect, redirect_location, rd_num);
-            printf("child2\n");
 
-            execvp(argv[pipe_locate_num + 1], argv + pipe_locate_num + 1);
-            printf("child3\n");
+            while (argv[pipe_locate_num + 1][cmd_len] != '\0')
+                cmd_len++;
 
-            exit(EXIT_SUCCESS);
+            char command[128];
+            memcpy(command, cmd_path[0], CMD_PATH_LEN);
+            memcpy(command + CMD_PATH_LEN, argv[pipe_locate_num + 1], 10);
 
+            if (bg > 0) { //if background
+                printf("[%d] %d\n", bg, getpid());
+                signal(SIGCHLD, proc_exit);
+                if ((pid2 = fork()) < 0) {
+                    perror("fork");
+                    exit(EXIT_FAILURE);
+                } else if (pid2 == 0) {
+                    int num;
+                    if ((num = execve(command, argv + pipe_locate_num + 1, environ)) == 0) {
+                        printf("%d\n", num);
+                        exit(EXIT_SUCCESS);
+                    } else {
+                        fprintf(stderr, "%s: Command not found\n", argv[pipe_locate_num + 1]);
+                        exit(EXIT_FAILURE);
+                    }
 
-/*
-            int count = 0;
+                } else {
 
-            struct sigaction sigterm_action;
-            memset(&sigterm_action, 0, sizeof(sigterm_action));
-            sigterm_action.sa_handler = &cleanupRoutine;
-            sigterm_action.sa_flags = 0;
-
-            // Mask other signals from interrupting SIGTERM handler
-            if (sigfillset(&sigterm_action.sa_mask) != 0)
-            {
-                perror("sigfillset");
-                exit(EXIT_FAILURE);
+                }
+            } else {
+                int num;
+                if ((num = execve(command, argv + pipe_locate_num + 1, environ)) == 0) {
+                    printf("%d\n", num);
+                    exit(EXIT_SUCCESS);
+                } else {
+                    fprintf(stderr, "%s: Command not found\n", argv[pipe_locate_num + 1]);
+                    exit(EXIT_FAILURE);
+                }
             }
-            // Register SIGTERM handler
-            if (sigaction(SIGTERM, &sigterm_action, NULL) != 0)
-            {
-                perror("sigaction SIGTERM");
-                exit(EXIT_FAILURE);
-            }
-
-            while (shutdown_flag) {
-                count += 1;
-            }
-            printf("count = %d\n", count);
-
-            exit(EXIT_SUCCESS);
-*/
-
-
         } else { //parent
-
-            int status = -1;
-            wait(&status);
-
-            if (status == -1) {
-                int ret = kill(pid, SIGKILL);
-                if (ret == -1) {
-                    perror("kill");
-                    exit(EXIT_FAILURE);
-                }
-                if (waitpid(pid, &wstatus, WUNTRACED | WCONTINUED) == -1) {
-                    perror("waitpid");
-                    exit(EXIT_FAILURE);
-                }
-            }
-
-            printf("parent\n");
-
-            if (i == 0) {
-                int status;
+            if (bg == 0) { //if not background
+                int status = -1;
                 wait(&status);
-            } else if (i > 0) {
-                close(pfd[i - 1][0]); close(pfd[i - 1][1]);
+
+                if (status == -1) {
+                    int ret = kill(pid, SIGKILL);
+                    if (ret == -1) {
+                        perror("kill");
+                        exit(EXIT_FAILURE);
+                    }
+                    if (waitpid(pid, &wstatus, WUNTRACED | WCONTINUED) == -1) {
+                        perror("waitpid");
+                        exit(EXIT_FAILURE);
+                    }
+                }
+                if (i == 0) {
+                    int status;
+                    wait(&status);
+                } else if (i > 0) {
+                    close(pfd[i - 1][0]); close(pfd[i - 1][1]);
+                }
             }
         }
     }
@@ -216,7 +210,7 @@ void my_redirect(int argc, char *argv[], int *fd, int redirect, int redirect_loc
         dup2(*fd, 1);
         close(*fd);
     } else if (redirect == 2) { //>>
-        *fd = open(argv[redirect_location[rd_num]+1], O_WRONLY|O_CREAT|O_TRUNC, 0644);
+        *fd = open(argv[redirect_location[rd_num]+1], O_RDWR|O_CREAT|O_APPEND, 0644);
         dup2(*fd, 1);
         close(*fd);
     } else if (redirect == 3) { //<
@@ -238,13 +232,4 @@ void my_redirect(int argc, char *argv[], int *fd, int redirect, int redirect_loc
     }
 }
 
-void ignore()
-{
-
-}
-/*
-void cleanupRoutine(int signal_number)
-{
-    shutdown_flag = 0;
-}
-*/
+void ignore() {}
