@@ -4,12 +4,14 @@
 #include "mysh.h"
 
 
-void gettoken(int *argc, char *argv[], char *lbuf)
+int gettoken(int *argc, char *argv[], char *lbuf)
 {
     int pc = 1;
     char ch;
     char *token = lbuf;
+    int count = 0;
     while ((ch = getc(stdin)) != '\n') {
+        count++;
         switch (ch) {
             case '-':
                 if (*(token - 1) != ' ') {
@@ -31,6 +33,7 @@ void gettoken(int *argc, char *argv[], char *lbuf)
                 *token++ = ch;
                 //while ((ch = getc(stdin)) == ' ');
                 ch = getc(stdin);
+                count++;
                 if (ch == '\n')
                     break;
                 switch (ch) {
@@ -55,18 +58,21 @@ void gettoken(int *argc, char *argv[], char *lbuf)
             break;
     }
 
-    while (1) {
-        while (isblank(*lbuf))
-            lbuf++;
-        if (*lbuf == '\0')
-            return;
-        argv[(*argc)++] = lbuf;
-        while (*lbuf && !isblank(*lbuf))
-            lbuf++;
-        if (*lbuf == '\0')
-            return;
-        *lbuf++ = '\0';
+    if (count != 0) {
+        while (1) {
+            while (isblank(*lbuf))
+                lbuf++;
+            if (*lbuf == '\0')
+                return 0;
+            argv[(*argc)++] = lbuf;
+            while (*lbuf && !isblank(*lbuf))
+                lbuf++;
+            if (*lbuf == '\0')
+                return 0;
+            *lbuf++ = '\0';
+        }
     }
+    return -1;
 }
 
 void setargs(int *argc, char *argv[], char *lbuf)

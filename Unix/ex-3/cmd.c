@@ -15,10 +15,15 @@ extern char **environ;
 
 void proc_exit()
 {
-    extern int bg;
-    printf("\n[%d]  +done \t %d", bg, getpid());
-    printf("\nmysh$ ");
-    exit(0);
+    int wstat;
+    pid_t pid;
+    int n;
+
+    while (1) {
+        pid = wait3(&wstat, WNOHANG, NULL);
+        if (pid == 0 || pid == -1)
+            return;
+        }
 }
 
 struct command_table b_cmd_tbl[] = {
@@ -30,11 +35,11 @@ struct command_table b_cmd_tbl[] = {
 
 void my_cd(int argc, char *argv[])
 {
+    struct stat st;
     int count = 0;
+
     while (argv[count] != NULL)
         count++;
-
-    struct stat st;
 
     if (count == 1) {
         chdir(ROOT_DIRECTORY);
@@ -62,7 +67,6 @@ void my_cd(int argc, char *argv[])
         fprintf(stderr, "cd: string not in pwd: %s\n", argv[1]);
         return;
     }
-
     return;
 }
 
@@ -81,38 +85,39 @@ void my_pwd(int argc, char *argv[])
 
 void my_exit(int argc, char *argv[])
 {
-    exit(0);
-    return;
+    exit(EXIT_SUCCESS);
 }
 
 void my_dup(int i, int pipe_count, int pfd[9][2])
 {
     if (i == 0) {
         dup2(pfd[i][1], 1);
-        close(pfd[i][0]); close(pfd[i][1]);
+        close(pfd[i][0]);
+        close(pfd[i][1]);
     } else if (i == pipe_count) {
         dup2(pfd[i - 1][0], 0);
-        close(pfd[i - 1][0]); close(pfd[i - 1][1]);
+        close(pfd[i - 1][0]);
+        close(pfd[i - 1][1]);
     } else {
         dup2(pfd[i - 1][0], 0);
         dup2(pfd[i][1], 1);
-        close(pfd[i - 1][0]); close(pfd[i - 1][1]);
-        close(pfd[i][0]); close(pfd[i][1]);
+        close(pfd[i - 1][0]);
+        close(pfd[i - 1][1]);
+        close(pfd[i][0]);
+        close(pfd[i][1]);
     }
+    return;
 }
 
-void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2], int i, int redirect, int redirect_location[10], int rd_num, int bg)
+void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pipe_count, int pfd[9][2], int i, int redirect, int redirect_location[10], int rd_num, int bg)
 {
+    extern int array[128];
     extern char *cmd_path[CMD_PATH_LEN + 1];
+    char command[128];
+    int wstatus, num, pid, rc = 0;
+    struct sigaction act;
 
     cmd_path[0] = "/bin/";
-
-    int wstatus;
-    int pid2;
-    int cmd_len;
-
-    int rc = 0;
-    struct sigaction act;
 
     memset(&act, 0, sizeof(act));
     act.sa_handler = ignore;
@@ -120,87 +125,62 @@ void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pfd[9][2]
 
     rc = sigaction(SIGINT, &act, NULL);
     if(rc < 0) {
-        printf("Error: sigaction() %s\n", strerror(errno));
-        exit(1);
+        fprintf(stderr, "Error: sigaction() %s\n", strerror(errno));
+        exit(EXIT_FAILURE);
     }
 
-    int pid;
     struct command_table *p;
     for (p = b_cmd_tbl; p->cmd; p++) {
-        if (strcmp(argv[pipe_locate_num + 1], p->cmd) == 0) { //if not built-in command
+        if (strcmp(argv[pipe_locate_num + 1], p->cmd) == 0) { //if built-in command
             my_redirect(argc, argv, fd, redirect, redirect_location, rd_num);
             (*p->func)(argc, argv + pipe_locate_num + 1);
             break;
         }
     }
-    if (p->cmd == NULL) { //if built-in command
+
+    if (p->cmd == NULL) { //if not built-in command
+        signal(SIGCHLD, proc_exit);
         if ((pid = fork()) < 0) { //error
             perror("fork");
             exit(EXIT_FAILURE);
         } else if (pid == 0) { //child
+            my_dup(i, pipe_count, pfd);
+            //setpgid(0, 0);
             my_redirect(argc, argv, fd, redirect, redirect_location, rd_num);
 
-            while (argv[pipe_locate_num + 1][cmd_len] != '\0')
-                cmd_len++;
-
-            char command[128];
+            //prepare execve
             memcpy(command, cmd_path[0], CMD_PATH_LEN);
             memcpy(command + CMD_PATH_LEN, argv[pipe_locate_num + 1], 10);
 
-            if (bg > 0) { //if background
-                printf("[%d] %d\n", bg, getpid());
-                signal(SIGCHLD, proc_exit);
-                if ((pid2 = fork()) < 0) {
-                    perror("fork");
-                    exit(EXIT_FAILURE);
-                } else if (pid2 == 0) {
-                    int num;
-                    if ((num = execve(command, argv + pipe_locate_num + 1, environ)) == 0) {
-                        printf("%d\n", num);
-                        exit(EXIT_SUCCESS);
-                    } else {
-                        fprintf(stderr, "%s: Command not found\n", argv[pipe_locate_num + 1]);
-                        exit(EXIT_FAILURE);
-                    }
+            //execvp(argv[pipe_locate_num + 1], argv + pipe_locate_num + 1);
 
-                } else {
 
-                }
-            } else {
-                int num;
-                if ((num = execve(command, argv + pipe_locate_num + 1, environ)) == 0) {
-                    printf("%d\n", num);
+            if ((num = execve(command, argv + pipe_locate_num + 1, environ)) == 0)
+                exit(EXIT_SUCCESS);
+            else { // if execve is failed
+                if ((num = execvp(argv[pipe_locate_num + 1], argv + pipe_locate_num + 1)) == 0)
                     exit(EXIT_SUCCESS);
-                } else {
+                else {
                     fprintf(stderr, "%s: Command not found\n", argv[pipe_locate_num + 1]);
                     exit(EXIT_FAILURE);
                 }
             }
-        } else { //parent
-            if (bg == 0) { //if not background
-                int status = -1;
-                wait(&status);
 
-                if (status == -1) {
-                    int ret = kill(pid, SIGKILL);
-                    if (ret == -1) {
-                        perror("kill");
-                        exit(EXIT_FAILURE);
-                    }
-                    if (waitpid(pid, &wstatus, WUNTRACED | WCONTINUED) == -1) {
-                        perror("waitpid");
-                        exit(EXIT_FAILURE);
-                    }
-                }
+        } else { //parent
+            if (!(bg > 0)) {
                 if (i == 0) {
                     int status;
-                    wait(&status);
+                    waitpid(pid, &status, 0);
                 } else if (i > 0) {
-                    close(pfd[i - 1][0]); close(pfd[i - 1][1]);
+                    close(pfd[i - 1][0]);
+                    close(pfd[i - 1][1]);
+                    int status;
+                    waitpid(pid, &status, 0);
                 }
             }
         }
     }
+    return;
 }
 
 void my_redirect(int argc, char *argv[], int *fd, int redirect, int redirect_location[10], int rd_num)
@@ -230,6 +210,7 @@ void my_redirect(int argc, char *argv[], int *fd, int redirect, int redirect_loc
     } else if (redirect == 0) {
 
     }
+    return;
 }
 
 void ignore() {}
