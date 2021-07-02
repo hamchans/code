@@ -11,6 +11,9 @@
 int server_status = INIT;
 int server_event = START;
 
+int sigalarm_flag = 0;
+int limit_time;
+
 int main(int argc, char *argv[])
 {
     extern struct proctable ptab_server[];
@@ -25,6 +28,12 @@ int main(int argc, char *argv[])
     FILE *fp;
     char filename[12];
     char ch;
+    char lbuf[256];
+    int p = 0, i = 0;
+    char time[16];
+
+    int argsc = 0;
+    char *argsv[256];
 
     myport = 51230;
 
@@ -42,6 +51,28 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
+    while ((ch = fgetc(fp)) != '\n')
+        time[i++] = ch;
+    limit_time = atoi(time);
+
+    while((ch = fgetc(fp)) != EOF) {
+        if (ch == ' ') {
+            lbuf[p++] = '\0';
+            //while ((ch = fgetc(fp)) != '\n');
+        } else if (ch == '\n') {
+            lbuf[p++] = '\0';
+        } else {
+            lbuf[p++] = ch;
+        }
+	}
+    lbuf[p++] = '\0';
+
+    getargs(&argsc, argsv, lbuf);
+
+    printf("-- config file: TTL %d --\n", limit_time);
+    for (i=0; i<argsc; i+=2) {
+        printf("-- config file: IP %s, netmask %s --\n", argsv[i], argsv[i+1]);
+    }
 
 
     if ((s = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
@@ -60,6 +91,7 @@ int main(int argc, char *argv[])
 
 //ここまで準備
     for (;;) {
+        printf("\n-- wait for event --\n");
         server_event = wait_server_event();
         pt = ptab_server;
         for (pt = ptab_server; pt->status; pt++) {

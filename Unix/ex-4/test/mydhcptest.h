@@ -13,8 +13,13 @@
 #define RECEIVE_OFFER       113
 #define SEND_REQUEST        114
 #define RECEIVE_ACK         115
-#define HALF_LIMIT          116
-#define LIMIT               117
+#define IN_USE              116
+#define HALF_LIMIT          117
+#define LIMIT               118
+#define SEND_RELEASE        119
+#define RECEIVE_OFFER_NG    120
+#define RECEIVE_ACK_NG      121
+#define RECEIVE_SIGALARM    122
 
 //server side status
 #define WAIT_DISCOVER       201
@@ -28,6 +33,10 @@
 #define RECEIVE_REQUEST     214
 #define SEND_ACK            215
 #define RECEIVE_RELEASE     216
+#define RELEASE_IP     217
+
+//limit time
+//#define LIMIT_TIME          6
 
 
 
@@ -36,11 +45,10 @@ void mydhcp_discover();
 void mydhcp_wait_offer();
 void mydhcp_request();
 void mydhcp_wait_ack();
-/*
-void mydhcp_in_use();
-void mydhcp_select();
+void mydhcp_in_use_client();
 void mydhcp_release_client();
-*/
+void terminate();
+
 int wait_client_event();
 
 
@@ -50,11 +58,11 @@ void mydhcp_wait_discover();
 void mydhcp_offer();
 void mydhcp_wait_request();
 void mydhcp_ack();
-/*
+void mydhcp_in_use_server();
 void mydhcp_release_server();
-*/
-int wait_server_event();
 
+int wait_server_event();
+void getargs(int *argsc, char *argsv[], char *lbuf);
 
 struct proctable {
     int status;

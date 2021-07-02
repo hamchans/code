@@ -12,6 +12,8 @@ int client_status = INIT;
 int client_event = CONNECT_NETWORK;
 char server_IP_address[16];
 
+int release_flag = 0;
+
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +27,8 @@ int main(int argc, char *argv[])
     in_port_t myport;
     socklen_t sktlen;
 
+    struct mydhcp_format format;
+
     port = 51230;
     myport = 51230;
 
@@ -37,6 +41,8 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Please input a correct syntax.\n");
         exit(1);
     }
+
+    printf("-- server IP: %s:%d --\n", server_IP_address, port);
 
 
 
@@ -65,6 +71,16 @@ int main(int argc, char *argv[])
         perror("bind");
         exit(1);
     }
+
+    format.source_IP = 0; //unsigned int
+    format.dest_IP = 0; //unsigned int
+    format.source_port = 0; //unsigned int
+    format.dest_port = 0; //unsigned int
+    format.mydhcp_message.type = 0; //unsigned char
+    format.mydhcp_message.code = 0; //unsigned char
+    format.mydhcp_message.ttl = 0; //unsigned short
+    format.mydhcp_message.IP = 0; //unsigned short
+    format.mydhcp_message.Netmask = 0; //unsigned int
 
 //ここまで準備
     for (;;) {
