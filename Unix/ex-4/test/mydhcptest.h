@@ -1,6 +1,7 @@
 //status
 #define INIT                1
-#define FIN                 0
+#define FIN                 2
+#define ERROR               -1
 
 //client side status
 #define WAIT_OFFER          101
@@ -33,10 +34,12 @@
 #define RECEIVE_REQUEST     214
 #define SEND_ACK            215
 #define RECEIVE_RELEASE     216
-#define RELEASE_IP     217
+#define RELEASE_IP          217
 
 //limit time
 //#define LIMIT_TIME          6
+
+
 
 
 
@@ -49,7 +52,8 @@ void mydhcp_in_use_client();
 void mydhcp_release_client();
 void terminate();
 
-int wait_client_event();
+void wait_client_event(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt, int st);
+void set_client_status(int changed_status);
 
 
 //server side
@@ -60,9 +64,11 @@ void mydhcp_wait_request();
 void mydhcp_ack();
 void mydhcp_in_use_server();
 void mydhcp_release_server();
+void set_server_status(int changed_status);
 
-int wait_server_event();
+void wait_server_event(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt);
 void getargs(int *argsc, char *argsv[], char *lbuf);
+int is_assign(int assign[], int argsc);
 
 struct proctable {
     int status;
@@ -85,3 +91,5 @@ struct mydhcp_format {
     unsigned int dest_port;
     struct mydhcp_message_format mydhcp_message;
 };
+
+struct mydhcp_format set_format(unsigned int source_IP, unsigned int dest_IP, unsigned int source_port, unsigned int dest_port, unsigned char type, unsigned char code, unsigned short ttl, unsigned int IP, unsigned int Netmask);

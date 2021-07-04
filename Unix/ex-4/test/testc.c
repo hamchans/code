@@ -6,13 +6,26 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <sys/ioctl.h>
+#include <net/if.h>
 #include "mydhcptest.h"
 
 int client_status = INIT;
 int client_event = CONNECT_NETWORK;
-char server_IP_address[16];
 
 int release_flag = 0;
+
+struct mydhcp_format format;
+char *server_IP_address;
+char *client_IP_address;
+
+int flag = 0;
+int request_ttl = 4;
+struct in_addr request_IP;
+struct in_addr request_Netmask;
+
+in_port_t port;
+in_port_t myport;
 
 
 int main(int argc, char *argv[])
@@ -23,29 +36,39 @@ int main(int argc, char *argv[])
     int s, rs;
     struct sockaddr_in skt;
     struct sockaddr_in myskt;
-    in_port_t port;
-    in_port_t myport;
     socklen_t sktlen;
 
-    struct mydhcp_format format;
+    char input_address[16];
 
-    port = 51230;
-    myport = 51230;
+    int fd;
+    struct ifreq ifr;
+    int st = 0;
+
+    port = 51231;
+    myport = 51231;
 
     if (argc == 1) {
         fprintf(stderr, "Please input a server IP address.\n");
         exit(1);
     } else if (argc == 2) {
-        memcpy(server_IP_address, argv[1], 16);
+        memcpy(input_address, argv[1], 16);
     } else {
         fprintf(stderr, "Please input a correct syntax.\n");
         exit(1);
     }
 
+
+    fd = socket(AF_INET, SOCK_DGRAM, 0);
+    ifr.ifr_addr.sa_family = AF_INET;
+    strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);
+    ioctl(fd, SIOCGIFADDR, &ifr);
+
+    close(fd);
+
+    client_IP_address = inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr);
+    server_IP_address = input_address;
+
     printf("-- server IP: %s:%d --\n", server_IP_address, port);
-
-
-
 
     if ((s = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         perror("socket");
@@ -72,19 +95,9 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    format.source_IP = 0; //unsigned int
-    format.dest_IP = 0; //unsigned int
-    format.source_port = 0; //unsigned int
-    format.dest_port = 0; //unsigned int
-    format.mydhcp_message.type = 0; //unsigned char
-    format.mydhcp_message.code = 0; //unsigned char
-    format.mydhcp_message.ttl = 0; //unsigned short
-    format.mydhcp_message.IP = 0; //unsigned short
-    format.mydhcp_message.Netmask = 0; //unsigned int
-
 //ここまで準備
     for (;;) {
-        client_event = wait_client_event();
+        wait_client_event(s, &skt, &myskt, st++);
         pt = ptab_client;
         for (pt = ptab_client; pt->status; pt++) {
             if (pt->status == client_status && pt->event == client_event) {

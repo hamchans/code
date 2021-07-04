@@ -14,6 +14,20 @@ int server_event = START;
 int sigalarm_flag = 0;
 int limit_time;
 
+int argsc = 0;
+char *argsv[256];
+int assign[256];
+
+int fcode;
+
+struct in_addr offer_IP;
+struct in_addr offer_Netmask;
+struct in_addr request_IP;
+struct in_addr request_Netmask;
+
+in_port_t myport;
+in_port_t port;
+
 int main(int argc, char *argv[])
 {
     extern struct proctable ptab_server[];
@@ -22,8 +36,9 @@ int main(int argc, char *argv[])
     int s, rs;
     struct sockaddr_in myskt;
     struct sockaddr_in skt;
-    in_port_t myport;
     socklen_t sktlen;
+
+    struct mydhcp_format format;
 
     FILE *fp;
     char filename[12];
@@ -32,10 +47,7 @@ int main(int argc, char *argv[])
     int p = 0, i = 0;
     char time[16];
 
-    int argsc = 0;
-    char *argsv[256];
-
-    myport = 51230;
+    myport = 51231;
 
     if (argc == 1) {
         fprintf(stderr, "Please input a config-file.\n");
@@ -58,7 +70,6 @@ int main(int argc, char *argv[])
     while((ch = fgetc(fp)) != EOF) {
         if (ch == ' ') {
             lbuf[p++] = '\0';
-            //while ((ch = fgetc(fp)) != '\n');
         } else if (ch == '\n') {
             lbuf[p++] = '\0';
         } else {
@@ -68,6 +79,10 @@ int main(int argc, char *argv[])
     lbuf[p++] = '\0';
 
     getargs(&argsc, argsv, lbuf);
+
+    for (i=0; i<argsc/2; i++) {
+        assign[i] = 1;
+    }
 
     printf("-- config file: TTL %d --\n", limit_time);
     for (i=0; i<argsc; i+=2) {
@@ -92,8 +107,7 @@ int main(int argc, char *argv[])
 //ここまで準備
     for (;;) {
         printf("\n-- wait for event --\n");
-        server_event = wait_server_event();
-        pt = ptab_server;
+        wait_server_event(s, &skt, &myskt);
         for (pt = ptab_server; pt->status; pt++) {
             if (pt->status == server_status && pt->event == server_event) {
                 (*pt->func)(s, &skt, &myskt);
