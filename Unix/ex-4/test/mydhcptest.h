@@ -92,4 +92,18 @@ struct mydhcp_format {
     struct mydhcp_message_format mydhcp_message;
 };
 
+struct client {
+    struct client *fp;
+    struct client *bp;
+    short status;
+    int ttlcounter;
+    struct in_addr id;
+    struct in_addr addr;
+    struct in_addr netmask;
+    uint16_t ttl;
+};
+
 struct mydhcp_format set_format(unsigned int source_IP, unsigned int dest_IP, unsigned int source_port, unsigned int dest_port, unsigned char type, unsigned char code, unsigned short ttl, unsigned int IP, unsigned int Netmask);
+
+void insert_tail(struct client *h, struct client *p);
+void remove_from_list(struct client *p);

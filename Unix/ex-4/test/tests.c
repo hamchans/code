@@ -28,6 +28,8 @@ struct in_addr request_Netmask;
 in_port_t myport;
 in_port_t port;
 
+struct client client_list;
+
 int main(int argc, char *argv[])
 {
     extern struct proctable ptab_server[];
@@ -103,6 +105,9 @@ int main(int argc, char *argv[])
         perror("bind");
         exit(1);
     }
+
+    client_list.fp = &client_list;
+    client_list.bp = &client_list;
 
 //ここまで準備
     for (;;) {

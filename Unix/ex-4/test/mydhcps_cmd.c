@@ -17,7 +17,6 @@
 struct proctable ptab_server[] = {
     {INIT, RECEIVE_DISCOVER, mydhcp_offer},
     {WAIT_REQUEST, RECEIVE_REQUEST, mydhcp_ack},
-    //{ASSIGN_IP, SEND_ACK, mydhcp_in_use_server},
     {ASSIGN_IP, RECEIVE_REQUEST, mydhcp_ack},
     {ASSIGN_IP, RECEIVE_RELEASE, mydhcp_release_server}
 };
@@ -61,6 +60,8 @@ void mydhcp_offer(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
     int count, datalen;
     char sbuf[512];
     datalen = 160;
+    extern struct client client_list;
+    struct client *p;
 
     fd = socket(AF_INET, SOCK_DGRAM, 0);
     ifr.ifr_addr.sa_family = AF_INET;
@@ -78,6 +79,18 @@ void mydhcp_offer(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
         fcode = 0;
         inet_aton(argsv[assign_index*2], &assign_net_IP_address);
         inet_aton(argsv[assign_index*2+1], &assign_net_Netmask);
+        /*
+        assign[assign_index*2] = -1;
+
+        if ((p = (struct client *) malloc(sizeof(struct client))) == NULL) {
+            fprintf(stderr, "Can't allocate memory!");
+            exit(1);
+        }
+        p.status = 1;
+
+        insert_tail(&client_list, p);
+        */
+
     } else {
         fcode = 1;
     }
@@ -203,7 +216,6 @@ void mydhcp_ack(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
 
     format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, 4, fcode, 0, request_IP.s_addr, request_Netmask.s_addr);
 
-    //memcpy(sbuf, "DHCP ACK (OK)", 14);
     if ((count = sendto(s, &format, datalen, 0, (struct sockaddr *)&(*myskt), sizeof(*myskt))) < 0) {
         perror("sendto");
         exit(1);
@@ -212,7 +224,6 @@ void mydhcp_ack(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
     if (fcode == 0) {
         memcpy(sbuf, "DHCP ACK (OK)", 14);
         set_server_status(ASSIGN_IP);
-        //server_event = SEND_ACK;
     } else if (fcode == 4) {
         memcpy(sbuf, "DHCP ACK (NG)", 14);
         set_server_status(INIT);
@@ -278,79 +289,7 @@ void mydhcp_ack(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
     printf("## message sent to %s:%d ##\n", client_IP_address, format.dest_port);
     printf("type %d(%s), code %d(%s), ttl %d, IP %s, netmask %s\n", format.mydhcp_message.type, message, format.mydhcp_message.code, code_message, format.mydhcp_message.ttl, ip_addrstr, netmaskstr);
 }
-/*
-void mydhcp_in_use_server(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
-{
-    extern int server_status;
-    extern int server_event;
 
-    extern int limit_time;
-    extern int sigalarm_flag;
-    sigalarm_flag = 0;
-
-    int i;
-
-    int count, datalen;
-    char rbuf[512];
-    char sbuf[512];
-    socklen_t sktlen;
-    fd_set rdfds;
-    struct timeval timeout;
-    sktlen = sizeof(*myskt);
-    int ret_select;
-
-    datalen = 9;
-
-    while (1) {
-        FD_ZERO(&rdfds);
-        FD_SET(0, &rdfds);
-        FD_SET(s, &rdfds);
-
-        timeout.tv_sec = limit_time / 2;
-        timeout.tv_usec = 0;
-
-        ret_select = select(s+1, &rdfds, NULL, NULL, &timeout);
-
-        if (ret_select == -1) {
-            printf("Error\n");
-            exit(1);
-            //error
-        }
-
-        if (ret_select == 0) {
-            sigalarm_flag++;
-            if (sigalarm_flag == 1) {
-                memcpy(sbuf, "SIGALRM", datalen);
-                if ((count = sendto(s, sbuf, datalen, 0, (struct sockaddr *)&(*myskt), sizeof(*myskt))) < 0) {
-                    perror("sendto");
-                    exit(1);
-                }
-                printf("** %s sent **\n", sbuf);
-                printf("TTL %d\n", limit_time / 2);
-                continue;
-            } else if (sigalarm_flag == 2) {
-                printf("timeout\n");
-                server_event = RECEIVE_RELEASE;
-                break;
-            }
-        }
-
-        if ((count = recvfrom(s, rbuf, sizeof(rbuf), 0, (struct sockaddr *)&(*myskt), &sktlen)) < 0) {
-            perror("recvfrom");
-            exit(1);
-        }
-        printf("\n## %s received ##\n", rbuf);
-
-        if (strcmp(rbuf, "DHCP REQUEST") == 0) {
-            server_event = RECEIVE_REQUEST;
-            break;
-        } else if (strcmp(rbuf, "DHCP RELEASE") == 0) {
-            server_event = RECEIVE_RELEASE;
-            break;
-        }
-    }
-}
-*/
 void mydhcp_release_server(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt)
 {
     extern int server_status;
@@ -611,4 +550,19 @@ void set_server_status(int changed_status)
             printf("ASSIGN_IP\n");
             break;
     }
+}
+
+void insert_tail(struct client *h, struct client *p)
+{
+    p->fp = h;
+    p->bp = h->bp;
+    h->bp->fp = p;
+    h->bp = p;
+}
+
+void remove_from_list(struct client *p)
+{
+    p->bp->fp = p->fp;
+    p->fp->bp = p->bp;
+    p->fp = p->bp = NULL;
 }
