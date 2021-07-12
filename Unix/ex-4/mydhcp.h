@@ -1,6 +1,7 @@
 //status
 #define INIT                1
-#define FIN                 0
+#define FIN                 2
+#define ERROR               -1
 
 //client side status
 #define WAIT_OFFER          101
@@ -9,10 +10,17 @@
 
 //client side event
 #define CONNECT_NETWORK     111
-#define RECEIVE_OFFER       112
-#define RECEIVE_ACK         113
-#define HALF_LIMIT          114
-#define LIMIT               115
+#define SEND_DISCOVER       112
+#define RECEIVE_OFFER       113
+#define SEND_REQUEST        114
+#define RECEIVE_ACK         115
+#define IN_USE              116
+#define HALF_LIMIT          117
+#define LIMIT               118
+#define SEND_RELEASE        119
+#define RECEIVE_OFFER_NG    120
+#define RECEIVE_ACK_NG      121
+#define RECEIVE_SIGALARM    122
 
 //server side status
 #define WAIT_DISCOVER       201
@@ -22,20 +30,16 @@
 //server side event
 #define START               211
 #define RECEIVE_DISCOVER    212
-#define RECEIVE_REQUEST     213
-#define RECEIVE_RELEASE     214
+#define SEND_OFFER          213
+#define RECEIVE_REQUEST     214
+#define SEND_ACK            215
+#define RECEIVE_RELEASE     216
+#define RELEASE_IP          217
+
+//limit time
+//#define LIMIT_TIME          6
 
 
-int ss;
-struct sockaddr_in skt;
-char sbuf[512];
-in_port_t port;
-socklen_t sktlen;
-
-int rs;
-struct sockaddr_in myskt;
-char rbuf[512];
-in_port_t myport;
 
 
 
@@ -44,24 +48,32 @@ void mydhcp_discover();
 void mydhcp_wait_offer();
 void mydhcp_request();
 void mydhcp_wait_ack();
-void mydhcp_getting_ip();
-void mydhcp_select();
+void mydhcp_in_use_client();
 void mydhcp_release_client();
+void terminate();
 
-int wait_event();
+void wait_client_event(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt, int st);
+void set_client_status(int changed_status);
 
 
 //server side
+
 void mydhcp_wait_discover();
 void mydhcp_offer();
+void mydhcp_wait_request();
 void mydhcp_ack();
+void mydhcp_in_use_server();
 void mydhcp_release_server();
+void set_server_status(int changed_status);
 
+void wait_server_event(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt);
+void getargs(int *argsc, char *argsv[], char *lbuf);
+int is_assign(int assign[], int argsc);
 
 struct proctable {
     int status;
     int event;
-    void (*func)();
+    void (*func)(int s, struct sockaddr_in *skt, struct sockaddr_in *myskt);
 };
 
 struct mydhcp_message_format {
@@ -79,3 +91,19 @@ struct mydhcp_format {
     unsigned int dest_port;
     struct mydhcp_message_format mydhcp_message;
 };
+
+struct client {
+    struct client *fp;
+    struct client *bp;
+    short status;
+    int ttlcounter;
+    struct in_addr id;
+    struct in_addr addr;
+    struct in_addr netmask;
+    uint16_t ttl;
+};
+
+struct mydhcp_format set_format(unsigned int source_IP, unsigned int dest_IP, unsigned int source_port, unsigned int dest_port, unsigned char type, unsigned char code, unsigned short ttl, unsigned int IP, unsigned int Netmask);
+
+void insert_tail(struct client *h, struct client *p);
+void remove_from_list(struct client *p);

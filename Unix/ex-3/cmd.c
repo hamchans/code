@@ -117,7 +117,7 @@ void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pipe_coun
     int wstatus, num, pid, rc = 0;
     struct sigaction act;
 
-    cmd_path[0] = "/bin/";
+    cmd_path[0] = "/usr/bin/";
 
     memset(&act, 0, sizeof(act));
     act.sa_handler = ignore;
@@ -145,7 +145,7 @@ void my_exec(int argc, char *argv[], int *fd, int pipe_locate_num, int pipe_coun
             exit(EXIT_FAILURE);
         } else if (pid == 0) { //child
             my_dup(i, pipe_count, pfd);
-            //setpgid(0, 0);
+            setpgid(0, 0);
             my_redirect(argc, argv, fd, redirect, redirect_location, rd_num);
 
             //prepare execve

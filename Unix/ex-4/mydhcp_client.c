@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <net/if.h>
-#include "mydhcptest.h"
+#include "mydhcp.h"
 
 int client_status = INIT;
 int client_event = CONNECT_NETWORK;

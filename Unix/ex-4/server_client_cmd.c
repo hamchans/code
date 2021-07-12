@@ -12,7 +12,7 @@
 #include <ctype.h>
 #include <net/if.h>
 #include <sys/ioctl.h>
-#include "mydhcptest.h"
+#include "mydhcp.h"
 
 struct mydhcp_format set_format(unsigned int source_IP, unsigned int dest_IP, unsigned int source_port, unsigned int dest_port, unsigned char type, unsigned char code, unsigned short ttl, unsigned int IP, unsigned int Netmask)
 {

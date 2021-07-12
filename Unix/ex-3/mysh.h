@@ -12,7 +12,7 @@
 #define TKN_EOL 6
 #define TKN_EOF 7
 
-#define CMD_PATH_LEN 5
+#define CMD_PATH_LEN 9
 
 
 char pathname[PATHNAME_SIZE];

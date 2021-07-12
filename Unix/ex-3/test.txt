@@ -1,6 +1,0 @@
-main 1
-test 2
-shell 3
-unix 4
-hoge 5
-foo 6

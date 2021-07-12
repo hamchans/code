@@ -6,7 +6,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include "mydhcptest.h"
+#include "mydhcp.h"
 
 int server_status = INIT;
 int server_event = START;

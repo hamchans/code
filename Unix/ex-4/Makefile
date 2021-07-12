@@ -1,23 +1,28 @@
 CC = gcc
 
-TARGET = mydhcp
-OBJS = main.o mydhcpc.o mydhcps.o
+TARGET1 = mydhcp_server
+OBJS1 = mydhcp_server.o mydhcps_cmd.o server_client_cmd.o
+TARGET2 = mydhcp_client
+OBJS2 = mydhcp_client.o mydhcpc_cmd.o server_client_cmd.o
 
 RM = rm -f
 
-$(TARGET): $(OBJS)
-	$(CC) -o $@ $(OBJS)
+$(TARGET1): $(OBJS1)
+	$(CC) -o $@ $(OBJS1)
+$(TARGET2): $(OBJS2)
+	$(CC) -o $@ $(OBJS2)
 
 .c.o:
 	gcc -c $<
 
-$(OBJS): mydhcp.h
+$(OBJS1): mydhcp.h
+$(OBJS2): mydhcp.h
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS1) $(OBJS2)
 
 clean_target:
-	$(RM) $(TARGET)
+	$(RM) $(TARGET1) $(TARGET2)
 
 clean_all:
-	$(RM) $(TARGET) $(OBJS)
+	$(RM) $(TARGET1) $(OBJS1) $(TARGET2) $(OBJS2)
