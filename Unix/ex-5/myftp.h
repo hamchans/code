@@ -1,0 +1,55 @@
+#define BUFLENGTH 256
+#define NARGS 256
+
+#define PATHNAME_SIZE 512
+#define ROOT_DIRECTORY "/home/md202/ub396535"
+
+#define TYPE_QUIT   0x01
+#define TYPE_PWD    0x02
+#define TYPE_CWD    0x03
+#define TYPE_LIST   0x04
+#define TYPE_RETR   0x05
+#define TYPE_STOR   0x06
+
+struct command_table {
+    char *cmd;
+    void (*func)(int, char *[], int s);
+};
+
+void getargs(int *argsc, char *argsv[], char *lbuf);
+
+void init_client();
+void quit_client(int argsc, char *argsv[], int s);
+void my_pwd(int argsc, char *argsv[], int s);
+void my_cd(int argsc, char *argsv[], int s);
+void my_dir(int argsc, char *argsv[], int s);
+void my_lpwd(int argsc, char *argsv[], int s);
+void my_lcd(int argsc, char *argsv[], int s);
+void my_ldir(int argsc, char *argsv[], int s);
+void my_get(int argsc, char *argsv[], int s);
+void my_put(int argsc, char *argsv[], int s);
+void my_help(int argsc, char *argsv[], int s);
+
+struct myftp_message_format {
+    unsigned char type;
+    unsigned char code;
+    unsigned short data_length;
+    char message[64];
+};
+
+struct myftp_format {
+    unsigned int source_IP;
+    unsigned int dest_IP;
+    unsigned int source_port;
+    unsigned int dest_port;
+    struct myftp_message_format myftp_message;
+};
+
+struct myftp_format set_format(unsigned int source_IP, unsigned int dest_IP, unsigned int source_port, unsigned int dest_port, unsigned char type, unsigned char code, unsigned short datalen, char *message);
+
+void my_send(int s, struct myftp_format format);
+void my_recv(int s, struct myftp_format format);
+
+void my_pwd_server();
+void my_cd_server(struct myftp_format format);
+void my_ls_server(struct myftp_format format);
