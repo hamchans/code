@@ -15,6 +15,6 @@ struct myftp_format set_format(unsigned int source_IP, unsigned int dest_IP, uns
     format.myftp_message.type = type; //unsigned char
     format.myftp_message.code = code; //unsigned char
     format.myftp_message.data_length = datalen; //unsigned short
-    memcpy(format.myftp_message.message, message, 64);
+    memcpy(format.myftp_message.message, message, DATASIZE);
     return format;
 }

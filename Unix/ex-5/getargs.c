@@ -22,3 +22,15 @@ void getargs(int *argsc, char *argsv[], char *lbuf)
         *lbuf++ = '\0';
     }
 }
+
+void setargs(int *argc, char *argv[], char *lbuf)
+{
+    int i;
+    for (i=0; i<*argc; i++)
+        argv[i] = NULL;
+    *argc = 0;
+
+    for (i=0; i<NARGS; i++)
+        lbuf[i] = ' ';
+    lbuf[strlen(lbuf) - 1] = '\0';
+}

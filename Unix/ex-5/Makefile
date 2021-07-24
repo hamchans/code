@@ -1,9 +1,9 @@
 CC = gcc
 
 TARGET1 = myftpd
-OBJS1 = myftpd.o myftpd_cmd.o
+OBJS1 = myftpd.o myftpd_cmd.o tcps_cmd.o getargs.o cmd.o
 TARGET2 = myftpc
-OBJS2 = myftpc.o myftpc_cmd.o getargs.o
+OBJS2 = myftpc.o myftpc_cmd.o tcpc_cmd.o getargs.o cmd.o
 
 RM = rm -f
 

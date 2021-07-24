@@ -2,13 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
-#include <unistd.h>
 #include <sys/stat.h>
 
 #include "myftp.h"
-
-extern char pathname[PATHNAME_SIZE];
-extern struct myftp_format format;
 
 void my_send(int s, struct myftp_format format)
 {
@@ -20,16 +16,18 @@ void my_send(int s, struct myftp_format format)
         perror("send");
         exit(1);
     }
-    printf("Sent %s\n", format.myftp_message.message);
+    printf("Sent to %d:%d\n", format.dest_IP, format.dest_port);
 }
 
-void my_recv(int s, struct myftp_format format)
+struct myftp_format my_recv(int s, struct myftp_format format)
 {
     int count;
     if ((count = recv(s, &format, sizeof(format), 0)) < 0) {
         perror("recv");
         exit(1);
     }
+
+    printf("Recv from %d:%d\n", format.source_IP, format.source_port);
 
     switch (format.myftp_message.type) {
         case TYPE_QUIT:
@@ -38,75 +36,31 @@ void my_recv(int s, struct myftp_format format)
             break;
         case TYPE_PWD:
             printf("Recv pwd\n");
-            my_pwd_server();
+            my_pwd_server(s);
             break;
         case TYPE_CWD:
             printf("Recv cwd\n");
-            my_cd_server(format);
+            my_cd_server(s, format);
             break;
         case TYPE_LIST:
             printf("Recv list\n");
-            my_ls_server(format);
+            my_ls_server(s, format);
             break;
         case TYPE_RETR:
             printf("Recv retr\n");
+            my_get_server(s, format);
             break;
         case TYPE_STOR:
             printf("Recv stor\n");
+            my_put_server(s, format);
+            break;
+        case TYPE_DATA:
+            printf("Recv data\n");
             break;
         default:
             printf("Recv unknown\n");
+            exit(EXIT_FAILURE);
             break;
     }
-    printf("Recv %s\n", format.myftp_message.message);
-}
-
-void my_pwd_server()
-{
-    getcwd(pathname, PATHNAME_SIZE);
-    printf("%s\n", pathname);
-    return;
-}
-
-void my_cd_server(struct myftp_format format)
-{
-    struct stat st;
-
-    char *dir = format.myftp_message.message;
-    printf("%d\n", format.myftp_message.type);
-    if (stat(dir, &st) != 0) {
-        fprintf(stderr, "cd: no such file or directory: %s\n", dir);
-        return;
-    } else {
-        switch (st.st_mode & S_IFMT) {
-            case S_IFREG:
-                fprintf(stderr, "cd: not a directory: %s\n", dir);
-                return;
-            case S_IFDIR:
-                printf("AAA\n");
-                chdir(dir);
-                return;
-            default:
-                fprintf(stderr, "cd: no such file or directory: %s\n", dir);
-                return;
-        }
-    }
-    return;
-}
-
-void my_ls_server(struct myftp_format format)
-{
-    char *cmd[2];
-    cmd[0] = format.myftp_message.message;
-
-    //memcpy(cmd[1], format.myftp_message.message, 64);
-    int pid, status;
-    if ((pid = fork()) < 0) { //error
-        perror("fork");
-        exit(EXIT_FAILURE);
-    } else if (pid == 0) { //child
-        execvp("ls", &cmd[0]);
-    } else { //parent
-        waitpid(pid, &status, 0);
-    }
+    return format;
 }

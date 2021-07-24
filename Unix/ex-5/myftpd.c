@@ -10,7 +10,10 @@
 
 struct myftp_format format;
 
-int main()
+char *server_IP_address;
+char *client_IP_address;
+
+int main(int argc, char *argv[])
 {
     int s, s2;
     struct sockaddr_in myskt;
@@ -19,6 +22,8 @@ int main()
     socklen_t sktlen;
     int count;
     char rbuf[256];
+
+    my_cd(argc, argv, 0);
 
     if ((s = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         perror("socket");

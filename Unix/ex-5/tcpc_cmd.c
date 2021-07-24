@@ -5,6 +5,12 @@
 
 #include "myftp.h"
 
+extern char *server_IP_address;
+extern struct in_addr server_net_IP_address;
+extern char *client_IP_address;
+extern struct in_addr client_net_IP_address;
+
+
 void my_send(int s, struct myftp_format format)
 {
     int count;
@@ -15,15 +21,16 @@ void my_send(int s, struct myftp_format format)
         perror("send");
         exit(1);
     }
-    printf("Sent %s\n", format.myftp_message.message);
+    printf("Sent to %s:%d\n", server_IP_address, format.dest_port);
 }
 
-void my_recv(int s, struct myftp_format format)
+struct myftp_format my_recv(int s, struct myftp_format format)
 {
     int count;
     if ((count = recv(s, &format, sizeof(format), 0)) < 0) {
         perror("recv");
         exit(1);
     }
-    printf("Recv %s\n", format.myftp_message.message);
+    printf("Recv from %s:%d\n", server_IP_address, format.source_port);
+    return format;
 }

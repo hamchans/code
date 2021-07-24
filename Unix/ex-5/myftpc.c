@@ -5,10 +5,18 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <net/if.h>
+#include <sys/ioctl.h>
 
 #include "myftp.h"
 
 struct myftp_format format;
+
+char *server_IP_address;
+struct in_addr server_net_IP_address;
+char *client_IP_address;
+struct in_addr client_net_IP_address;
+in_port_t port;
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +30,9 @@ int main(int argc, char *argv[])
     char *host, *serv;
     int err;
     char ip[256];
+
+    int fd;
+    struct ifreq ifr;
 
     memset(&hints, 0, sizeof(hints));
     hints.ai_socktype = SOCK_STREAM;
@@ -44,12 +55,23 @@ int main(int argc, char *argv[])
 
     getnameinfo(res->ai_addr, res->ai_addrlen, ip, sizeof(ip), NULL, 0, NI_NUMERICHOST);
     freeaddrinfo(res);
+    server_IP_address = ip;
+    inet_aton(server_IP_address, &server_net_IP_address);
     printf("%s\n", ip);
+    printf("%s\n", server_IP_address);
+
+    fd = socket(AF_INET, SOCK_DGRAM, 0);
+    ifr.ifr_addr.sa_family = AF_INET;
+    strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);
+    ioctl(fd, SIOCGIFADDR, &ifr);
+    close(fd);
+    client_IP_address = inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr);
+    inet_aton(client_IP_address, &client_net_IP_address);
 
     //ソケット関連
     int s;
     struct sockaddr_in skt;
-    in_port_t port;
+    //in_port_t port;
     struct in_addr ipaddr;
     int count, datalen;
     char sbuf[256];
@@ -77,6 +99,7 @@ int main(int argc, char *argv[])
     //my_send(s, format);
 
     while (1) {
+        setargs(&argsc, argsv, lbuf);
         printf("myFTP%% ");
 
         if (fgets(lbuf, sizeof(lbuf), stdin) == NULL) {
