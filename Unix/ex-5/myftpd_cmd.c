@@ -6,11 +6,20 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <dirent.h>
+#include <net/if.h>
+#include <arpa/inet.h>
 
 #include "myftp.h"
 
 extern char pathname[PATHNAME_SIZE];
 extern struct myftp_format format;
+
+extern char *server_IP_address;
+extern struct in_addr server_net_IP_address;
+extern char *client_IP_address;
+extern struct in_addr client_net_IP_address;
+extern in_port_t myport;
+extern in_port_t port;
 
 void my_cd(int argc, char *argv[], int s)
 {
@@ -52,7 +61,7 @@ void my_cd(int argc, char *argv[], int s)
 void my_pwd_server(int s)
 {
     getcwd(pathname, PATHNAME_SIZE);
-    format = set_format(0, 0, 0, 0, TYPE_OK, 0x00, sizeof(pathname), pathname);
+    format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_OK, 0x00, sizeof(pathname), pathname);
     my_send(s, format);
     printf("%s\n", pathname);
     return;
@@ -66,24 +75,24 @@ void my_cd_server(int s, struct myftp_format format)
     char *dir = format.myftp_message.message;
     if (stat(dir, &st) != 0) {
         fprintf(stderr, "cd: no such file or directory: %s\n", dir);
-        format = set_format(0, 0, 0, 0, TYPE_FILE_ERR, CODE_0, 0, message);
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_FILE_ERR, CODE_0, 0, message);
         my_send(s, format);
         return;
     } else {
         switch (st.st_mode & S_IFMT) {
             case S_IFREG:
                 fprintf(stderr, "cd: not a directory: %s\n", dir);
-                format = set_format(0, 0, 0, 0, TYPE_FILE_ERR, CODE_0, 0, message);
+                format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_FILE_ERR, CODE_0, 0, message);
                 my_send(s, format);
                 return;
             case S_IFDIR:
                 chdir(dir);
-                format = set_format(0, 0, 0, 0, TYPE_OK, CODE_0, 0, message);
+                format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_OK, CODE_0, 0, message);
                 my_send(s, format);
                 return;
             default:
                 fprintf(stderr, "cd: no such file or directory: %s\n", dir);
-                format = set_format(0, 0, 0, 0, TYPE_FILE_ERR, CODE_0, 0, message);
+                format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_FILE_ERR, CODE_0, 0, message);
                 my_send(s, format);
                 return;
         }
@@ -108,7 +117,7 @@ void my_ls_server(int s, struct myftp_format f)
     getargs(&argsc, argsv, lbuf);
     argsv[argsc] = f.myftp_message.message;
 
-    format = set_format(0, 0, 0, 0, TYPE_OK, CODE_1, 0, message);
+    format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_OK, CODE_1, 0, message);
     my_send(s, format);
 
     dir = opendir(argsv[0]);
@@ -118,14 +127,14 @@ void my_ls_server(int s, struct myftp_format f)
             message[size++] = dp->d_name[i];
             if (size == DATASIZE) {
                 printf("\n");
-                format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_1, 0, message);
+                format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, 0, message);
                 my_send(s, format);
                 size = 0;
             }
         }
         message[size++] = '\n';
         if (size == DATASIZE) {
-            format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_1, 0, message);
+            format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, 0, message);
             my_send(s, format);
             size = 0;
         }
@@ -134,7 +143,7 @@ void my_ls_server(int s, struct myftp_format f)
     message[size-1] = '\0';
     printf("%s\n", message);
 
-    format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_0, 0, message);
+    format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, 0, message);
     my_send(s, format);
 
 
@@ -178,19 +187,19 @@ void my_get_server(int s, struct myftp_format f)
     }
 
     if ((fp = fopen("cmd.c", "r")) == NULL) {
-        format = set_format(0, 0, 0, 0, TYPE_FILE_ERR, CODE_1, size, message);
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_FILE_ERR, CODE_1, size, message);
         my_send(s, format);
         printf("Cannot open file %s\n", f.myftp_message.message);
         return;
     }
-    format = set_format(0, 0, 0, 0, TYPE_OK, CODE_1, size, message);
+    format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_OK, CODE_1, size, message);
     my_send(s, format);
     while((str = fgetc(fp)) != EOF) {
         message[size++] = str;
         printf("%c",str);
         if (size == DATASIZE) {
             printf("\n");
-            format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_1, size, message);
+            format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
             my_send(s, format);
             size = 0;
         }
@@ -198,16 +207,16 @@ void my_get_server(int s, struct myftp_format f)
 
     if (size == DATASIZE) {
         printf("%s\n", message);
-        format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_1, size, message);
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
         my_send(s, format);
         printf("\n");
-        format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_0, sizeof("\0"), "\0");
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, sizeof("\0"), "\0");
         my_send(s, format);
     } else {
         message[size-1] = '\n';
         message[size] = '\0';
         printf("%s\n", message);
-        format = set_format(0, 0, 0, 0, TYPE_DATA, CODE_0, size, message);
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, size, message);
         my_send(s, format);
     }
 
@@ -225,11 +234,11 @@ void my_put_server(int s, struct myftp_format f)
     printf("%s\n", filename);
     if ((fp = fopen(filename, "w")) == NULL) {
         printf("Cannot open file %s\n", f.myftp_message.message);
-        format = set_format(0, 0, 0, 0, TYPE_FILE_ERR, CODE_1, 0, message);
+        format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_FILE_ERR, CODE_1, 0, message);
         format = my_recv(s, format);
         return;
     }
-    format = set_format(0, 0, 0, 0, TYPE_OK, CODE_2, 0, message);
+    format = set_format(server_net_IP_address.s_addr, client_net_IP_address.s_addr, myport, port, TYPE_OK, CODE_2, 0, message);
     my_send(s, format);
     do {
         format = my_recv(s, format);

@@ -21,7 +21,7 @@ void my_send(int s, struct myftp_format format)
         perror("send");
         exit(1);
     }
-    printf("Sent to %s:%d\n", server_IP_address, format.dest_port);
+    //printf("Sent to %d:%d\n", format.dest_IP, format.dest_port);
 }
 
 struct myftp_format my_recv(int s, struct myftp_format format)
@@ -31,6 +31,6 @@ struct myftp_format my_recv(int s, struct myftp_format format)
         perror("recv");
         exit(1);
     }
-    printf("Recv from %s:%d\n", server_IP_address, format.source_port);
+    //printf("Recv from %d:%d\n", format.source_IP, format.source_port);
     return format;
 }

@@ -17,6 +17,7 @@ struct in_addr server_net_IP_address;
 char *client_IP_address;
 struct in_addr client_net_IP_address;
 in_port_t port;
+in_port_t myport;
 
 int main(int argc, char *argv[])
 {
@@ -57,8 +58,8 @@ int main(int argc, char *argv[])
     freeaddrinfo(res);
     server_IP_address = ip;
     inet_aton(server_IP_address, &server_net_IP_address);
-    printf("%s\n", ip);
-    printf("%s\n", server_IP_address);
+    //printf("%s\n", ip);
+    //printf("%s\n", server_IP_address);
 
     fd = socket(AF_INET, SOCK_DGRAM, 0);
     ifr.ifr_addr.sa_family = AF_INET;
@@ -92,9 +93,12 @@ int main(int argc, char *argv[])
     skt.sin_addr.s_addr = inet_addr(ip);
 
     if (connect(s, (struct sockaddr *)&skt, sizeof(skt)) < 0) {
-        fprintf(stderr, "ERROR2\n");
+        perror("connect");
         exit(EXIT_FAILURE);
     }
+    format = my_recv(s, format);
+    myport = format.dest_port;
+    printf("Connection to %s:%d is successful\n", server_IP_address, ntohs(skt.sin_port));
 
     //my_send(s, format);
 

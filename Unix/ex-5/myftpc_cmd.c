@@ -10,6 +10,7 @@
 
 extern char pathname[PATHNAME_SIZE];
 extern in_port_t port;
+extern in_port_t myport;
 extern char *server_IP_address;
 extern struct in_addr server_net_IP_address;
 extern char *client_IP_address;
@@ -38,7 +39,7 @@ void quit_client(int argsc, char *argsv[], int s)
 {
     char message[DATASIZE];
     extern struct myftp_format format;
-    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_QUIT, 0, 0, message);
+    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_QUIT, 0, 0, message);
     my_send(s, format);
     close(s);
     exit(EXIT_SUCCESS);
@@ -48,7 +49,7 @@ void my_pwd(int argsc, char *argsv[], int s)
 {
     char message[DATASIZE];
     extern struct myftp_format format;
-    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_PWD, 0, 0, message);
+    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_PWD, 0, 0, message);
     my_send(s, format);
     format = my_recv(s, format);
     printf("%s\n", format.myftp_message.message);
@@ -73,7 +74,7 @@ void my_cd(int argsc, char *argsv[], int s)
         fprintf(stderr, "cd: string not in pwd: %s\n", argsv[1]);
         return;
     }
-    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_CWD, 0, 0, message);
+    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_CWD, 0, 0, message);
     printf("%s\n", format.myftp_message.message);
     my_send(s, format);
     format = my_recv(s, format);
@@ -88,7 +89,7 @@ void my_dir(int argsc, char *argsv[], int s)
     } else if (argsc == 2) {
         memcpy(message, argsv[1], DATASIZE);
     }
-    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_LIST, 0, 0, message);
+    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_LIST, 0, 0, message);
     my_send(s, format);
     format = my_recv(s, format);
     printf("%s\n", format.myftp_message.message);
@@ -173,7 +174,7 @@ void my_get(int argsc, char *argsv[], int s)
         for (i=0; argsv[1][i] != '\0'; i++) {
             message[i] = argsv[1][i];
         }
-        format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_RETR, 0, sizeof(argsv[1]), message);
+        format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_RETR, 0, sizeof(argsv[1]), message);
         my_send(s, format);
         do {
             format = my_recv(s, format);
@@ -223,7 +224,7 @@ void my_put(int argsc, char *argsv[], int s)
             return;
         }
         memcpy(filename, argsv[argsc - 1], sizeof(*argsv[argsc - 1]));
-        format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_STOR, 0, 0, filename);
+        format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_STOR, 0, 0, filename);
         my_send(s, format);
         format = my_recv(s, format);
         if (format.myftp_message.type == TYPE_OK) {
@@ -232,23 +233,23 @@ void my_put(int argsc, char *argsv[], int s)
                 printf("%c", str);
                 if (size == DATASIZE) {
                     printf("\n");
-                    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_DATA, CODE_1, size, message);
+                    format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
                     my_send(s, format);
                     size = 0;
                 }
             }
             if (size == DATASIZE) {
                 printf("%s\n", message);
-                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_DATA, CODE_1, size, message);
+                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
                 my_send(s, format);
                 printf("\n");
-                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_DATA, CODE_0, sizeof("\0"), "\0");
+                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, sizeof("\0"), "\0");
                 my_send(s, format);
             } else {
                 message[size-1] = '\n';
                 message[size] = '\0';
                 printf("%s\n", message);
-                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, 0, port, TYPE_DATA, CODE_0, size, message);
+                format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, size, message);
                 my_send(s, format);
             }
 
