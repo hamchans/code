@@ -75,7 +75,7 @@ void my_cd(int argsc, char *argsv[], int s)
         return;
     }
     format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_CWD, 0, 0, message);
-    printf("%s\n", format.myftp_message.message);
+    //printf("%s\n", format.myftp_message.message);
     my_send(s, format);
     format = my_recv(s, format);
 }
@@ -92,7 +92,7 @@ void my_dir(int argsc, char *argsv[], int s)
     format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_LIST, 0, 0, message);
     my_send(s, format);
     format = my_recv(s, format);
-    printf("%s\n", format.myftp_message.message);
+    //printf("%s\n", format.myftp_message.message);
     do {
         format = my_recv(s, format);
         printf("%s", format.myftp_message.message);
@@ -184,10 +184,10 @@ void my_get(int argsc, char *argsv[], int s)
                     return;
                 }
                 fputs(format.myftp_message.message, fp);
-                printf("%s", format.myftp_message.message);
+                //printf("%s", format.myftp_message.message);
             } else if (format.myftp_message.type == TYPE_DATA) {
                 fputs(format.myftp_message.message, fp);
-                printf("%s", format.myftp_message.message);
+                //printf("%s", format.myftp_message.message);
             } else {
                 fprintf(stderr, "Cannot open file %s\n", message);
                 return;
@@ -230,31 +230,31 @@ void my_put(int argsc, char *argsv[], int s)
         if (format.myftp_message.type == TYPE_OK) {
             while((str = fgetc(fp)) != EOF) {
                 message[size++] = str;
-                printf("%c", str);
+                //printf("%c", str);
                 if (size == DATASIZE) {
-                    printf("\n");
+                    //printf("\n");
                     format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
                     my_send(s, format);
                     size = 0;
                 }
             }
             if (size == DATASIZE) {
-                printf("%s\n", message);
+                //printf("%s\n", message);
                 format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_1, size, message);
                 my_send(s, format);
-                printf("\n");
+                //printf("\n");
                 format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, sizeof("\0"), "\0");
                 my_send(s, format);
             } else {
                 message[size-1] = '\n';
                 message[size] = '\0';
-                printf("%s\n", message);
+                //printf("%s\n", message);
                 format = set_format(client_net_IP_address.s_addr, server_net_IP_address.s_addr, myport, port, TYPE_DATA, CODE_0, size, message);
                 my_send(s, format);
             }
 
             fclose(fp);
-            printf("\n");
+            //printf("\n");
         } else {
             fprintf(stderr, "Cannot open file %s\n", filename);
             return;

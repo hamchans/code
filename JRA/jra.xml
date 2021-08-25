@@ -1,0 +1,32 @@
+- Horse
+  - Name
+  - Father
+  - Mother
+  - Birthday
+  - Win
+  - SumPrize
+- Race
+  - Grade
+  - Course
+    - Racecourse
+    - Distance
+    - Type
+    - Condition
+  - Weather
+  - Horse
+    - Popular
+    - Order
+    - Jocky
+    - Trainer
+    - Time
+    - 3F
+    - Weight
+    - Prize
+- Racecourse
+  - Name
+- Jocky
+  - Name
+  - Win
+- Trainer
+  - Name
+  - Win
