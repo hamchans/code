@@ -29693,3 +29693,362 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.8ms | Allocations: 11307)
 
 
+Started GET "/" for ::1 at 2022-05-13 10:47:39 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 12455)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 15600)
+
+
+Started GET "/" for ::1 at 2022-05-13 10:47:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4320)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4707)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-13 10:47:46 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 11.9ms | Allocations: 3255)
+  Rendered auths/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 7849)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 8819)
+
+
+Started GET "/auths" for ::1 at 2022-05-13 10:47:46 +0900
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for AuthsController
+Did you mean?  destroy
+               new
+               create):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auths/new" for ::1 at 2022-05-13 10:47:47 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 1.8ms | Allocations: 468)
+  Rendered auths/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 564)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4971)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 5443)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-13 10:47:55 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 0.7ms | Allocations: 380)
+  Rendered auths/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 474)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4748)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5130)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-13 10:47:57 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 0.8ms | Allocations: 380)
+  Rendered auths/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 474)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4725)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5102)
+
+
+Started GET "/auths" for ::1 at 2022-05-13 10:47:58 +0900
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for AuthsController
+Did you mean?  destroy
+               new
+               create):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/auths/new" for ::1 at 2022-05-13 10:47:58 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 1.1ms | Allocations: 380)
+  Rendered auths/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 474)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4749)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5128)
+
+
+Started GET "/" for ::1 at 2022-05-13 10:47:59 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4331)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4710)
+
+
+Started GET "/users/new" for ::1 at 2022-05-13 10:47:59 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/new.html.erb within layouts/users
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1427)
+  Rendered users/new.html.erb within layouts/users (Duration: 3.7ms | Allocations: 1764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 8.8ms | Allocations: 6129)
+Completed 200 OK in 25ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 12600)
+
+
+Started GET "/users" for ::1 at 2022-05-13 10:48:00 +0900
+Processing by UsersController#index as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/index.html.erb within layouts/users
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:30
+  Rendered users/index.html.erb within layouts/users (Duration: 5.6ms | Allocations: 2025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 13.6ms | Allocations: 6171)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.6ms | Allocations: 6707)
+
+
+Started GET "/users/new" for ::1 at 2022-05-13 10:48:01 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/new.html.erb within layouts/users
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 859)
+  Rendered users/new.html.erb within layouts/users (Duration: 2.1ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 9.4ms | Allocations: 5094)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 5477)
+
+
+Started GET "/users" for ::1 at 2022-05-13 10:48:03 +0900
+Processing by UsersController#index as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/index.html.erb within layouts/users
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:30
+  Rendered users/index.html.erb within layouts/users (Duration: 3.3ms | Allocations: 1510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 11.1ms | Allocations: 5638)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 6016)
+
+
+Started GET "/users/7" for ::1 at 2022-05-13 10:48:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/users.html.erb
+  Rendering users/show.html.erb within layouts/users
+  Rendered users/show.html.erb within layouts/users (Duration: 0.9ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 8.3ms | Allocations: 4359)
+Completed 200 OK in 22ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 7670)
+
+
+Started GET "/users/new" for ::1 at 2022-05-13 10:48:25 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/new.html.erb within layouts/users
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 858)
+  Rendered users/new.html.erb within layouts/users (Duration: 2.0ms | Allocations: 966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 12.6ms | Allocations: 5093)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 5473)
+
+
+Started POST "/users" for ::1 at 2022-05-13 10:48:43 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"kouki", "email"=>"kouki@kouki.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?)[0m  [["name", "kouki"], ["created_at", "2022-05-13 01:48:43.405086"], ["updated_at", "2022-05-13 01:48:43.405086"], ["email", "kouki@kouki.com"], ["encrypted_password", "$2a$12$j36U07Rpz3hZHT7P.z5JI.oakVFiBRcNzshnLpqj9/vp2zxdz0F0K"]]
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/users/8
+Completed 302 Found in 292ms (ActiveRecord: 1.9ms | Allocations: 4703)
+
+
+Started GET "/users/8" for ::1 at 2022-05-13 10:48:43 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/users.html.erb
+  Rendering users/show.html.erb within layouts/users
+  Rendered users/show.html.erb within layouts/users (Duration: 0.1ms | Allocations: 104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 2.8ms | Allocations: 4256)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 5175)
+
+
+Started GET "/users" for ::1 at 2022-05-13 10:48:45 +0900
+Processing by UsersController#index as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/index.html.erb within layouts/users
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:30
+  Rendered users/index.html.erb within layouts/users (Duration: 4.3ms | Allocations: 1610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 13.6ms | Allocations: 5762)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 6136)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-13 10:48:48 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 0.9ms | Allocations: 388)
+  Rendered auths/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4740)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 5119)
+
+
+Started POST "/auths" for ::1 at 2022-05-13 10:48:57 +0900
+Processing by AuthsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "auth"=>{"email"=>"kouki@kouki.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kouki@kouki.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auths_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 278ms (ActiveRecord: 0.3ms | Allocations: 973)
+
+
+Started GET "/" for ::1 at 2022-05-13 10:48:58 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 4333)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 4713)
+
+
