@@ -1,0 +1,17 @@
+Rails.application.routes.draw do
+  devise_for :users
+  resources :users
+  get 'top/index'
+  resources :rooms
+  resources :entries, path: :rentals, only: [:new, :create, :destroy, :index, :show] do
+    collection do
+      post :confirm
+      post :confirm_back
+    end
+  end
+  resources :users
+  post '/rentals/confirm', to: 'entries#confirm'
+  root to: 'top#index'
+  resources :auths
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end

@@ -1,0 +1,45 @@
+<%= form_with(model: @entry, local: true, url: rentals_confirm_path(@entry)) do |form| %>
+<%#= form_with(model: entry) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name, value: current_user.name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_email %>
+    <%= form.text_field :user_email, value: current_user.email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reserved_date %>
+    <%= form.datetime_field :reserved_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usage_time %>
+    <%= form.number_field :usage_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :people %>
+    <%= form.number_field :people %>
+  </div>
+  
+  <%= form.hidden_field :room_id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

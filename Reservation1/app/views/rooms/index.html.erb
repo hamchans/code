@@ -1,0 +1,36 @@
+<%= "最近登録の部屋，#{session[:room]} です．" if session[:room] %>
+<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Number</th>
+      <th>Terms of use</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.place %></td>
+        <td><%= room.number %></td>
+        <td><%= room.terms_of_use %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>合計収容人数: <%= Room.sum(:number) %>人</p>
+<p>平均収容人数: <%= Room.average(:number).to_f %>人</p>
+
+<br>
+
+<div class="new_room"><%= link_to 'New Room', new_room_path %></div>

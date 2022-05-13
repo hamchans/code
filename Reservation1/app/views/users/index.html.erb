@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :header do %>
+  <h2><%= "ユーザ一覧用のヘッダー" %></h2>
+  <ul>
+    <li><%= link_to "トップ", root_path %></li>
+    <li><%= link_to "ユーザ登録", new_user_path %></li>
+    <li><%= link_to "ログイン", new_auth_path %></li>
+  </ul>
+  <hr>
+<% end %>
+<% content_for :footer do %>
+  <hr>
+  <h2><%= "ユーザ一覧用のフッター" %></h2>
+<% end %>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New User', new_user_path %>

@@ -1,0 +1,19 @@
+<h1>確認画面</h1>
+<p>
+  <strong>予約者:</strong>
+  <%= @entry.user_name %>
+  <br>
+  <strong>Email:</strong>
+  <%= @entry.user_email %>
+  <br>
+  <strong>予約日時:</strong>
+  <%= @entry.reserved_date %>
+  <br>
+  <strong>使用時間:</strong>
+  <%= @entry.usage_time %>
+  <br>
+  <strong>使用人数:</strong>
+  <%= @entry.people %>
+</p>
+
+<%= render 'confirm', entry: @entry %>

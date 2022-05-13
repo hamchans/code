@@ -1,0 +1,19 @@
+<%= form_for @entry, method: :post, url: confirm_back_entries_path do |form| %>
+  <%= form.hidden_field :user_name %>
+  <%= form.hidden_field :user_email %>
+  <%= form.hidden_field :reserved_date %>
+  <%= form.hidden_field :usage_time %>
+  <%= form.hidden_field :people %>
+  <%= form.hidden_field :room_id %>
+  <%= form.submit 'Back' %>
+<% end %>
+
+<%= form_for @entry, method: :post, url: entries_path do |form| %>
+  <%= form.hidden_field :user_name %>
+  <%= form.hidden_field :user_email %>
+  <%= form.hidden_field :reserved_date %>
+  <%= form.hidden_field :usage_time %>
+  <%= form.hidden_field :people %>
+  <%= form.hidden_field :room_id %>
+  <%= form.submit 'Save' %>
+<% end %>
