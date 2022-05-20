@@ -3,7 +3,6 @@ class Entry < ApplicationRecord
 
   validates :user_name, :user_email, :reserved_date, :usage_time, :people, presence: true
   validate :email_check
-  validates :user_email, uniqueness: true
 
   belongs_to :room
 

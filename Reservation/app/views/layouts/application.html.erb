@@ -13,13 +13,23 @@
   <body>
   <header>
     <ul>
-      <%= session[:user_id] %>
+      <% if current_user %>
+        <li><%= current_user.name %> さんでログイン中</li>
+      <% end %>
       <li><%= link_to "トップページ", root_path %></li>
-      <li><%= link_to "会議室登録", new_room_path %></li>
-      <li><%= link_to "会議室一覧", rooms_path %></li>
-      <li><%= link_to "予約一覧", entries_path %></li>
-      <li><%= link_to "予約登録", new_entry_path %></li>
-      <li><%= link_to "ログアウト", auth_path(session), method: :delete %></li>
+      <% if logged_in? %>
+        <li><%= link_to "会議室一覧", rooms_path %></li>
+        <% if current_user.admin? %>
+          <li><%= link_to "会議室登録", new_room_path %></li>
+        <% end %>
+      <% end %>
+      <li><%#= link_to "予約一覧", entries_path %></li>
+      <li><%#= link_to "予約登録", new_entry_path %></li>
+      <% if current_user %>
+        <li><%= link_to "ログアウト", auth_path(session), method: :delete %></li>
+      <% else %>
+        <li><%= link_to "ログイン", new_auth_path %></li>
+      <% end %>
     </ul>
   </header>
   <hr>

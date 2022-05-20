@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
 #  USERS = {"admin_user" => "admin_password"}
 #  before_action :authenticate
   before_action :set_room, only: %i[ show edit update destroy ]
+  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /rooms or /rooms.json
   def index
@@ -77,4 +78,8 @@ class RoomsController < ApplicationController
         USERS[username]
       end
     end
+
+  def admin_user
+    redirect_to(root_url) unless logged_in? || current_user.admin?
+  end
 end

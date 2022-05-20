@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)    
     respond_to do |format|
       if @entry.save
+        NoticeMailer.register(@entry).deliver_now
         format.html { redirect_to room_path(@entry.room), notice: "Entry was successfully created." }
         format.json { render :show, status: :created, location: @entry }
       else
@@ -20,11 +21,9 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry.destroy
-    
     respond_to do |format|
       format.html { redirect_to room_path(@entry.room), notice: "Entry was successfully destroyed." }
       format.json { head :no_content }
-#      format.js
     end
   end
 

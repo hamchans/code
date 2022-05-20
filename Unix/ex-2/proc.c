@@ -240,6 +240,7 @@ void getblk_proc(int argc, char *argv[])
         if (search_hash(n) != NULL)
             getblk(n);
         else {
+            getblk(n); //
             fprintf(stderr, "Not exisit No.%d buffer!\n", n);
             return;
         }

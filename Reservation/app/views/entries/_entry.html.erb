@@ -9,7 +9,7 @@
   <%= entry.usage_time %>
   <strong>使用人数:</strong>
   <%= entry.people %>
-  <% if current_user.email == entry.user_email %>
+  <% if current_user.email == entry.user_email || current_user.admin? %>
     <%= link_to 'Destroy', entry_path(entry.id), method: :delete %>
   <% end %>
 </p>
