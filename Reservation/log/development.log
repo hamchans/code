@@ -39659,3 +39659,2182 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 0.7ms | Allocations: 7357)
 
 
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-20 17:14:02 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 11.6ms | Allocations: 2705)
+  Rendered entries/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2816)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 7013)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.4ms | Allocations: 7429)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:14:09 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:14", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.8ms | Allocations: 730)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.4ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5652)
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 7104)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:14:12 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:14", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.8ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:14:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-20 08:14:12.270147"], ["updated_at", "2022-05-20 08:14:12.270147"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 50)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | Allocations: 122)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 120)
+NoticeMailer#register: processed outbound mail in 6.7ms
+Delivered mail 62874dd445f65_14b1578c8177@Kohki-Mac.local.mail (1565.6ms)
+Date: Fri, 20 May 2022 17:14:12 +0900
+From: from@example.com
+To: ham@inl.ics.keio.ac.jp
+Cc: reservation_host@example.com
+Message-ID: <62874dd445f65_14b1578c8177@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62874dd444ac1_14b1578c80bf";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62874dd444ac1_14b1578c80bf
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_62874dd444ac1_14b1578c80bf
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_62874dd444ac1_14b1578c80bf--
+
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 1589ms (ActiveRecord: 3.2ms | Allocations: 20226)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:14:13 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.6ms | Allocations: 736)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 103)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2374)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 6573)
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 0.8ms | Allocations: 7521)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-20 17:17:17 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 11.1ms | Allocations: 11563)
+  Rendered entries/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 12312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 21019)
+Completed 200 OK in 54ms (Views: 44.3ms | ActiveRecord: 0.5ms | Allocations: 30430)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:17:22 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:17", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.7ms | Allocations: 1104)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6256)
+Completed 200 OK in 39ms (Views: 10.3ms | ActiveRecord: 1.4ms | Allocations: 14280)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:17:23 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:17", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (0.9ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:17:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-20 08:17:23.464425"], ["updated_at", "2022-05-20 08:17:23.464425"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 157)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.3ms | Allocations: 329)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.4ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 8.6ms
+Delivered mail 62874e937d3f2_14dd94f3874310@Kohki-Mac.local.mail (1282.7ms)
+Date: Fri, 20 May 2022 17:17:23 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <62874e937d3f2_14dd94f3874310@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62874e9379fcb_14dd94f3874299";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62874e9379fcb_14dd94f3874299
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_62874e9379fcb_14dd94f3874299
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_62874e9379fcb_14dd94f3874299--
+
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 1329ms (ActiveRecord: 2.6ms | Allocations: 28712)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:17:24 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.1ms | Allocations: 950)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 109)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 4678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 8809)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 0.8ms | Allocations: 10508)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-20 17:18:46 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 5.9ms | Allocations: 1971)
+  Rendered entries/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2085)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 6289)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 6716)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:18:50 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:18", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.3ms | Allocations: 732)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 1.7ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5677)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 7111)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:18:57 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:18", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (0.9ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:18:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-20 08:18:57.290658"], ["updated_at", "2022-05-20 08:18:57.290658"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.6ms | Allocations: 123)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 120)
+NoticeMailer#register: processed outbound mail in 5.6ms
+Delivered mail 62874ef14a7ba_14dd94e9874517@Kohki-Mac.local.mail (1689.9ms)
+Date: Fri, 20 May 2022 17:18:57 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <62874ef14a7ba_14dd94e9874517@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62874ef1499b6_14dd94e98744ec";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62874ef1499b6_14dd94e98744ec
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_62874ef1499b6_14dd94e98744ec
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_62874ef1499b6_14dd94e98744ec--
+
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 1712ms (ActiveRecord: 2.8ms | Allocations: 20233)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:18:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.4ms | Allocations: 736)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 103)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 6883)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.6ms | Allocations: 7831)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-20 17:23:29 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 14.0ms | Allocations: 11470)
+  Rendered entries/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 12775)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 21161)
+Completed 200 OK in 39ms (Views: 29.7ms | ActiveRecord: 0.5ms | Allocations: 30380)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:23:34 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:23", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.6ms | Allocations: 1104)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6256)
+Completed 200 OK in 35ms (Views: 10.2ms | ActiveRecord: 1.5ms | Allocations: 14281)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:23:35 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:23", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.3ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:23:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-20 08:23:35.289224"], ["updated_at", "2022-05-20 08:23:35.289224"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 721)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 1934)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.5ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.0ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 9.5ms
+Delivered mail 628750075229d_14e044f38687b5@Kohki-Mac.local.mail (1121.3ms)
+Date: Fri, 20 May 2022 17:23:35 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628750075229d_14e044f38687b5@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6287500751793_14e044f38686d2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6287500751793_14e044f38686d2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_6287500751793_14e044f38686d2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_6287500751793_14e044f38686d2--
+
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 1176ms (ActiveRecord: 3.1ms | Allocations: 28639)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:23:36 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 951)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.8ms | Allocations: 5009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 9141)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 1.0ms | Allocations: 10840)
+
+
+Started GET "/" for ::1 at 2022-05-20 17:25:12 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 7656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 17414)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.3ms | Allocations: 21027)
+
+
+Started DELETE "/auths/%23%3CActionDispatch::Request::Session:0x000000010fcd4640%3E" for ::1 at 2022-05-20 17:25:13 +0900
+Processing by AuthsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"#<ActionDispatch::Request::Session:0x000000010fcd4640>"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 297)
+
+
+Started GET "/" for ::1 at 2022-05-20 17:25:13 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 841)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 7103)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.5ms | Allocations: 7484)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-20 17:25:15 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 10.5ms | Allocations: 2849)
+  Rendered auths/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3182)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 9476)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.1ms | Allocations: 10439)
+
+
+Started POST "/auths" for ::1 at 2022-05-20 17:25:27 +0900
+Processing by AuthsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "auth"=>{"email"=>"ham@inl.ics.keio.ac.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ham@inl.ics.keio.ac.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/auths_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 277ms (ActiveRecord: 1.3ms | Allocations: 1063)
+
+
+Started GET "/" for ::1 at 2022-05-20 17:25:27 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4906)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 5285)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 17:25:29 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 8682)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 12888)
+Completed 200 OK in 36ms (Views: 26.8ms | ActiveRecord: 2.1ms | Allocations: 15391)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:25:30 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.8ms | Allocations: 959)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 109)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 27.2ms | Allocations: 11386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 15492)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 1.6ms | Allocations: 16677)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-20 17:25:32 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 10.9ms | Allocations: 2938)
+  Rendered entries/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 7483)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.2ms | Allocations: 8560)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:25:36 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:25", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 4.8ms | Allocations: 1101)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1501)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 6353)
+Completed 200 OK in 31ms (Views: 22.4ms | ActiveRecord: 0.5ms | Allocations: 8194)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:25:37 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:25", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.0ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:25:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-20 08:25:37.466193"], ["updated_at", "2022-05-20 08:25:37.466193"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 160)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 332)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.7ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.3ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 9.3ms
+Delivered mail 628750817ae91_14e265140-34b@Kohki-Mac.local.mail (1364.7ms)
+Date: Fri, 20 May 2022 17:25:37 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628750817ae91_14e265140-34b@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_628750817a1a1_14e265140-454";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_628750817a1a1_14e265140-454
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_628750817a1a1_14e265140-454
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_628750817a1a1_14e265140-454--
+
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 1409ms (ActiveRecord: 2.5ms | Allocations: 28607)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-20 17:25:38 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 737)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 108)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3024)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7230)
+Completed 200 OK in 27ms (Views: 22.4ms | ActiveRecord: 0.7ms | Allocations: 8178)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 17:30:48 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 5115)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 9314)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.7ms | Allocations: 9716)
+
+
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:30:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 5695)
+Completed 200 OK in 37ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 6636)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:30:51 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 5.1ms | Allocations: 1963)
+  Rendered entries/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2076)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 6278)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 6695)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:30:59 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-21T17:30", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.7ms | Allocations: 732)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.1ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5662)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.6ms | Allocations: 7095)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:31:00 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-21T17:30", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (2.0ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-21 17:30:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:31:00.300473"], ["updated_at", "2022-05-20 08:31:00.300473"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | Allocations: 123)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.3ms | Allocations: 120)
+NoticeMailer#register: processed outbound mail in 6.9ms
+Delivered mail 628751c44d60d_14e265050-1da@Kohki-Mac.local.mail (1106.6ms)
+Date: Fri, 20 May 2022 17:31:00 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628751c44d60d_14e265050-1da@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_628751c44c3c3_14e265050-2cf";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_628751c44c3c3_14e265050-2cf
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_628751c44c3c3_14e265050-2cf
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_628751c44c3c3_14e265050-2cf--
+
+Redirected to http://localhost:3000/rooms/13
+Completed 302 Found in 1130ms (ActiveRecord: 3.7ms | Allocations: 20230)
+
+
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:31:01 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 771)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1711)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 5923)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.7ms | Allocations: 6871)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:31:14 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 5.0ms | Allocations: 1956)
+  Rendered entries/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6288)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.2ms | Allocations: 6705)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:31:19 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-21T17:31", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.6ms | Allocations: 730)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.0ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5652)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 7085)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:31:25 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-21T17:31", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.0ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-21 17:31:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:31:25.420489"], ["updated_at", "2022-05-20 08:31:25.420489"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 50)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 122)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 120)
+NoticeMailer#register: processed outbound mail in 6.6ms
+Delivered mail 628751dd6a33f_14e26514018e@Kohki-Mac.local.mail (1286.0ms)
+Date: Fri, 20 May 2022 17:31:25 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628751dd6a33f_14e26514018e@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_628751dd6914e_14e265140075";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_628751dd6914e_14e265140075
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_628751dd6914e_14e265140075
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_628751dd6914e_14e265140075--
+
+Redirected to http://localhost:3000/rooms/13
+Completed 302 Found in 1307ms (ActiveRecord: 2.6ms | Allocations: 20231)
+
+
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:31:26 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 771)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1877)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 6076)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.6ms | Allocations: 7023)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:35:16 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 13.6ms | Allocations: 11700)
+  Rendered entries/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 12634)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 21144)
+Completed 200 OK in 38ms (Views: 28.8ms | ActiveRecord: 0.6ms | Allocations: 30337)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:35:21 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:35", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.4ms | Allocations: 1104)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6256)
+Completed 200 OK in 35ms (Views: 9.8ms | ActiveRecord: 1.5ms | Allocations: 14280)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:35:22 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:35", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.0ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:35:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:35:22.291699"], ["updated_at", "2022-05-20 08:35:22.291699"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 157)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | Allocations: 329)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.0ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 9.4ms
+Delivered mail 628752ca53261_14e754f38-338@Kohki-Mac.local.mail (1091.9ms)
+Date: Fri, 20 May 2022 17:35:22 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628752ca53261_14e754f38-338@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_628752ca4fe0b_14e754f38-4af";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_628752ca4fe0b_14e754f38-4af
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_628752ca4fe0b_14e754f38-4af
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_628752ca4fe0b_14e754f38-4af--
+
+Redirected to http://localhost:3000/rooms/13
+Completed 302 Found in 1139ms (ActiveRecord: 2.6ms | Allocations: 28686)
+
+
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:35:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.9ms | Allocations: 991)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 8335)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.9ms | Allocations: 10034)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:37:40 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 16.4ms | Allocations: 11393)
+  Rendered entries/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 12473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 20936)
+Completed 200 OK in 42ms (Views: 31.9ms | ActiveRecord: 0.7ms | Allocations: 30353)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:37:45 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:37", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.7ms | Allocations: 1104)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6256)
+Completed 200 OK in 34ms (Views: 10.2ms | ActiveRecord: 1.1ms | Allocations: 14280)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:37:46 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:37", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.4ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:37:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:37:46.457382"], ["updated_at", "2022-05-20 08:37:46.457382"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 157)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 329)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.8ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.5ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 9.0ms
+Delivered mail 6287535a7a97f_14e954f38956e1@Kohki-Mac.local.mail (1231.0ms)
+Date: Fri, 20 May 2022 17:37:46 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <6287535a7a97f_14e954f38956e1@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6287535a77808_14e954f38955a5";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6287535a77808_14e954f38955a5
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_6287535a77808_14e954f38955a5
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_6287535a77808_14e954f38955a5--
+
+Completed 500 Internal Server Error in 1275ms (ActiveRecord: 3.3ms | Allocations: 28623)
+
+
+  
+Net::SMTPAuthenticationError (534-5.7.9 Application-specific password required. Learn more at
+):
+  
+app/controllers/entries_controller.rb:12:in `block in create'
+app/controllers/entries_controller.rb:10:in `create'
+Started GET "/rentals/confirm" for ::1 at 2022-05-20 17:39:17 +0900
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for EntriesController
+Did you mean?  new
+               confirm
+               destroy
+               logged_in?):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:39:18 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 5.3ms | Allocations: 2121)
+  Rendered entries/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 6594)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.3ms | Allocations: 7131)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:39:18 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 4.2ms | Allocations: 1956)
+  Rendered entries/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 6264)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 6680)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:39:23 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:39", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.3ms | Allocations: 748)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 1.6ms | Allocations: 848)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5670)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.4ms | Allocations: 7188)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:39:24 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:39", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (6.8ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:39:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:39:24.534316"], ["updated_at", "2022-05-20 08:39:24.534316"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.3ms | Allocations: 123)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.2ms | Allocations: 120)
+NoticeMailer#register: processed outbound mail in 5.7ms
+Delivered mail 628753bc8cc92_14e953b24958f1@Kohki-Mac.local.mail (1276.1ms)
+Date: Fri, 20 May 2022 17:39:24 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <628753bc8cc92_14e953b24958f1@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_628753bc8ba48_14e953b2495738";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_628753bc8ba48_14e953b2495738
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_628753bc8ba48_14e953b2495738
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_628753bc8ba48_14e953b2495738--
+
+Completed 500 Internal Server Error in 1324ms (ActiveRecord: 10.9ms | Allocations: 20441)
+
+
+  
+Net::SMTPAuthenticationError (534-5.7.9 Application-specific password required. Learn more at
+):
+  
+app/controllers/entries_controller.rb:12:in `block in create'
+app/controllers/entries_controller.rb:10:in `create'
+Started GET "/rentals/confirm" for ::1 at 2022-05-20 17:41:46 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for EntriesController
+Did you mean?  new
+               confirm
+               destroy
+               logged_in?):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:41:46 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 21.8ms | Allocations: 10470)
+  Rendered entries/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 10823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 19216)
+Completed 200 OK in 66ms (Views: 40.7ms | ActiveRecord: 1.5ms | Allocations: 27024)
+
+
+Started GET "/rentals/new?room_id=13" for ::1 at 2022-05-20 17:41:46 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"13"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 2.2ms | Allocations: 1957)
+  Rendered entries/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2069)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 6266)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 6683)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-20 17:41:51 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:41", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 1.4ms | Allocations: 1104)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6254)
+Completed 200 OK in 34ms (Views: 9.8ms | ActiveRecord: 1.1ms | Allocations: 14255)
+
+
+Started POST "/rentals" for ::1 at 2022-05-20 17:41:52 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"こーき", "user_email"=>"ham@inl.ics.keio.ac.jp", "reserved_date"=>"2022-05-20T17:41", "usage_time"=>"1", "people"=>"1", "room_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (0.6ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "こーき"], ["user_email", "ham@inl.ics.keio.ac.jp"], ["reserved_date", "2022-05-20 17:41:00"], ["usage_time", 1.0], ["room_id", 13], ["people", 1], ["created_at", "2022-05-20 08:41:52.741295"], ["updated_at", "2022-05-20 08:41:52.741295"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 162)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.0ms | Allocations: 334)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.5ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 7.0ms
+Delivered mail 62875450bc2d3_14ecb516847825@Kohki-Mac.local.mail (3375.1ms)
+Date: Fri, 20 May 2022 17:41:52 +0900
+From: hamhamsterdragon@gmail.com
+To: ham@inl.ics.keio.ac.jp
+Cc: koki.victory.630@keio.jp
+Message-ID: <62875450bc2d3_14ecb516847825@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62875450bb603_14ecb516847729";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62875450bb603_14ecb516847729
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44GT44O844GN44GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go44GG
+44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhyZWY9
+Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLjgq/j
+g6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_62875450bb603_14ecb516847729
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7jgZPjg7zjgY3jgZXj
+gpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTjgb7j
+gZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJlZj0i
+aHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOCr+OD
+quODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwvYm9k
+eT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_62875450bb603_14ecb516847729--
+
+Redirected to http://localhost:3000/rooms/13
+Completed 302 Found in 3429ms (ActiveRecord: 1.9ms | Allocations: 31921)
+
+
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:41:56 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.5ms | Allocations: 991)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 4701)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 8832)
+Completed 200 OK in 34ms (Views: 26.4ms | ActiveRecord: 1.2ms | Allocations: 10531)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20220520084752)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220520084752"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:54:22 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/kohki.y/Desktop/github/code/Reservation/app/controllers/rooms_controller.rb:72: syntax error, unexpected ':', expecting ')'
+...number, :terms_of_use, :images: [])
+...                              ^
+/Users/kohki.y/Desktop/github/code/Reservation/app/controllers/rooms_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/rooms_controller.rb:72: syntax error, unexpected ':', expecting ')'
+app/controllers/rooms_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:72: syntax error, unexpected ':', expecting ')'
+app/controllers/rooms_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/rooms_controller.rb:72: syntax error, unexpected ':', expecting ')'
+app/controllers/rooms_controller.rb:85: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/rooms/13" for ::1 at 2022-05-20 17:54:54 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 13], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.7ms | Allocations: 5998)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 93)
+  Rendered entries/_entry.html.erb (Duration: 0.0ms | Allocations: 93)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 20.5ms | Allocations: 19104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 52923)
+Completed 200 OK in 91ms (Views: 72.6ms | ActiveRecord: 1.3ms | Allocations: 63499)
+
+
+Started DELETE "/auths/%23%3CActionDispatch::Request::Session:0x000000012f30f658%3E" for ::1 at 2022-05-20 17:55:00 +0900
+Processing by AuthsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"#<ActionDispatch::Request::Session:0x000000012f30f658>"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 337)
+
+
+Started GET "/" for ::1 at 2022-05-20 17:55:00 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 953)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 7222)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.5ms | Allocations: 8191)
+
+
+Started GET "/auths/new" for ::1 at 2022-05-20 17:55:01 +0900
+Processing by AuthsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering auths/new.html.erb within layouts/application
+  Rendered auths/_form.html.erb (Duration: 11.1ms | Allocations: 2854)
+  Rendered auths/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 9508)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms | Allocations: 10478)
+
+
+Started POST "/auths" for ::1 at 2022-05-20 17:55:24 +0900
+Processing by AuthsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "auth"=>{"email"=>"koki@ham.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "koki@ham.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auths_controller.rb:6:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 271ms (ActiveRecord: 0.3ms | Allocations: 1060)
+
+
+Started GET "/" for ::1 at 2022-05-20 17:55:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4933)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 5313)
+
+
+Started GET "/rooms/new" for ::1 at 2022-05-20 17:55:27 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 16.7ms | Allocations: 4175)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 4511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 8633)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.1ms | Allocations: 9731)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 17:55:30 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 9012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 13235)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 1.3ms | Allocations: 13760)
+
+
+Started GET "/rooms/new" for ::1 at 2022-05-20 17:55:31 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 2.3ms | Allocations: 1236)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5579)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 6568)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:56:14 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish", "place"=>"日本橋", "number"=>"10", "terms_of_use"=>"仕事", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000000013a4a6ee8 @tempfile=#<Tempfile:/var/folders/st/glrp8h9s17n93vtw3cqnb85c0000gn/T/RackMultipart20220520-85808-18g99s9.png>, @original_filename="Screen Shot 2022-05-20 at 14.55.36.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[images][]\"; filename=\"Screen Shot 2022-05-20 at 14.55.36.png\"\r\nContent-Type: image/png\r\n">]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 2.5ms | Allocations: 2425)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6703)
+Completed 422 Unprocessable Entity in 48ms (Views: 7.4ms | ActiveRecord: 0.7ms | Allocations: 19707)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:56:23 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish", "place"=>"日本橋 #1", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 4.9ms | Allocations: 2338)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 6598)
+Completed 422 Unprocessable Entity in 20ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 8361)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:56:33 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish", "place"=>"東京 #630", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 4.3ms | Allocations: 2338)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6599)
+Completed 422 Unprocessable Entity in 19ms (Views: 14.8ms | ActiveRecord: 0.2ms | Allocations: 8360)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 17:56:42 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 8591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 12825)
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 5.2ms | Allocations: 13225)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:56:57 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish", "place"=>"東京 #630", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 4.9ms | Allocations: 2338)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 6616)
+Completed 422 Unprocessable Entity in 20ms (Views: 15.9ms | ActiveRecord: 0.2ms | Allocations: 8378)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:57:11 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish", "place"=>"東京", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 2.4ms | Allocations: 1399)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1507)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5659)
+Completed 422 Unprocessable Entity in 18ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 7391)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:57:24 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish #1", "place"=>"東京", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 4.1ms | Allocations: 1399)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1507)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5677)
+Completed 422 Unprocessable Entity in 19ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 7409)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 17:57:41 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish #10", "place"=>"東京", "number"=>"10", "terms_of_use"=>"仕事"}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:30:in `block in create'
+  [1m[36mRoom Create (1.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "place", "number", "created_at", "updated_at", "terms_of_use") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "SouthernWish #10"], ["place", "東京"], ["number", 10], ["created_at", "2022-05-20 08:57:41.664644"], ["updated_at", "2022-05-20 08:57:41.664644"], ["terms_of_use", "仕事"]]
+  ↳ app/controllers/rooms_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/rooms/72
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms | Allocations: 3404)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-20 17:57:41 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2531)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 6747)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.8ms | Allocations: 7697)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 17:57:46 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 8702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 12936)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 1.2ms | Allocations: 13343)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-20 17:57:49 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2527)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6761)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.8ms | Allocations: 7706)
+
+
+Started GET "/rooms/72/edit" for ::1 at 2022-05-20 17:57:55 +0900
+Processing by RoomsController#edit as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 2.6ms | Allocations: 1306)
+  Rendered rooms/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1568)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 5807)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.4ms | Allocations: 7436)
+
+
+Started PATCH "/rooms/72" for ::1 at 2022-05-20 17:58:01 +0900
+Processing by RoomsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"SouthernWish #10", "place"=>"東京", "number"=>"10", "terms_of_use"=>"仕事", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000000013abbd1f0 @tempfile=#<Tempfile:/var/folders/st/glrp8h9s17n93vtw3cqnb85c0000gn/T/RackMultipart20220520-85808-vnll01.png>, @original_filename="Screen Shot 2022-05-20 at 14.55.36.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[images][]\"; filename=\"Screen Shot 2022-05-20 at 14.55.36.png\"\r\nContent-Type: image/png\r\n">]}, "commit"=>"Update Room", "id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["key", "za8kttpoafoa7sfll17hbw429wtv"], ["filename", "Screen Shot 2022-05-20 at 14.55.36.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 302855], ["checksum", "xoOeTOMrJZktNlBef9ey8Q=="], ["created_at", "2022-05-20 08:58:01.910847"]]
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "images"], ["record_type", "Room"], ["record_id", 72], ["blob_id", 1], ["created_at", "2022-05-20 08:58:01.914100"]]
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+  [1m[36mRoom Update (0.2ms)[0m  [1m[33mUPDATE "rooms" SET "updated_at" = ? WHERE "rooms"."id" = ?[0m  [["updated_at", "2022-05-20 08:58:01.916560"], ["id", 72]]
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `block in update'
+[36m  Disk Storage (5.6ms) [0m[32mUploaded file to key: za8kttpoafoa7sfll17hbw429wtv (checksum: xoOeTOMrJZktNlBef9ey8Q==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 96868843-aac0-4ace-97b6-4acfb2f9f103) to Async(default) with arguments: #<GlobalID:0x000000010f6947d0 @uri=#<URI::GID gid://reservation/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/rooms/72
+Completed 302 Found in 55ms (ActiveRecord: 2.4ms | Allocations: 19543)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103] Performing ActiveStorage::AnalyzeJob (Job ID: 96868843-aac0-4ace-97b6-4acfb2f9f103) from Async(default) enqueued at 2022-05-20T08:58:01Z with arguments: #<GlobalID:0x000000010f68e4c0 @uri=#<URI::GID gid://reservation/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103] [36m  Disk Storage (0.3ms) [0m[34mDownloaded file from key: za8kttpoafoa7sfll17hbw429wtv[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [96868843-aac0-4ace-97b6-4acfb2f9f103] Performed ActiveStorage::AnalyzeJob (Job ID: 96868843-aac0-4ace-97b6-4acfb2f9f103) from Async(default) in 19.61ms
+Started GET "/rooms/72" for ::1 at 2022-05-20 17:58:01 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:26
+  [1m[36mEntry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 8112)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 9083)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-20 17:58:01 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yMFQwOTowMzowMS45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--26ab47b181644c410b198fc2241256763886471e/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yMFQwOTowMzowMS45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--26ab47b181644c410b198fc2241256763886471e/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1790)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yMFQwOTowMzowMS45ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--26ab47b181644c410b198fc2241256763886471e/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-20 17:58:01 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 18:00:31 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 17442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 21665)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.8ms | Allocations: 24683)
+
+
+Started GET "/rooms/new" for ::1 at 2022-05-20 18:00:34 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 9.5ms | Allocations: 1241)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 5582)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.2ms | Allocations: 6555)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 18:00:36 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"", "place"=>"", "number"=>"", "terms_of_use"=>""}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms | Allocations: 5450)
+
+
+  
+NoMethodError (undefined method `image' for #<Room:0x000000013ae31850>
+Did you mean?  images
+               images=):
+  
+app/controllers/rooms_controller.rb:30:in `block in create'
+app/controllers/rooms_controller.rb:29:in `create'
+Started GET "/rooms/new" for ::1 at 2022-05-20 18:00:43 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 2.8ms | Allocations: 1234)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5575)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.2ms | Allocations: 6548)
+
+
+Started GET "/rooms/new" for ::1 at 2022-05-20 18:01:01 +0900
+Processing by RoomsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 1.1ms | Allocations: 1302)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1411)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 5654)
+Completed 200 OK in 21ms (Views: 4.8ms | ActiveRecord: 1.0ms | Allocations: 17823)
+
+
+Started POST "/rooms" for ::1 at 2022-05-20 18:01:03 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"name"=>"", "place"=>"", "number"=>"", "terms_of_use"=>""}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/rooms_controller.rb:30:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 9.3ms | Allocations: 7183)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 7291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 11461)
+Completed 422 Unprocessable Entity in 49ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 19770)
+
+
+Started GET "/rooms" for ::1 at 2022-05-20 18:01:09 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 8746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 12962)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 1.2ms | Allocations: 13388)
+
+
+Started GET "/users/10" for ::1 at 2022-05-20 18:11:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/users.html.erb
+  Rendering users/show.html.erb within layouts/users
+  Rendered users/show.html.erb within layouts/users (Duration: 0.8ms | Allocations: 292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 11.1ms | Allocations: 4605)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.8ms | Allocations: 6658)
+
+
+Started GET "/users/10" for ::1 at 2022-05-20 18:11:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/users.html.erb
+  Rendering users/show.html.erb within layouts/users
+  Rendered users/show.html.erb within layouts/users (Duration: 0.2ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 4.9ms | Allocations: 4236)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5150)
+
+
+Started GET "/users" for ::1 at 2022-05-20 18:11:30 +0900
+Processing by UsersController#index as HTML
+  Rendering layout layouts/users.html.erb
+  Rendering users/index.html.erb within layouts/users
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:30
+  Rendered users/index.html.erb within layouts/users (Duration: 7.0ms | Allocations: 2307)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/users.html.erb (Duration: 16.1ms | Allocations: 6437)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.4ms | Allocations: 6934)
+
+

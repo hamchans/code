@@ -9,7 +9,7 @@ class NoticeMailer < ApplicationMailer
     @message = "#{entry.user_name}さん，申し込みありがとうございます．"
     @url = "http://www.example.com"
     mail to: entry.user_email,
-      cc: "reservation_host@example.com",
-      subject: "会議室予約確定のご案内"
+        cc: "koki.victory.630@keio.jp",
+        subject: "会議室予約確定のご案内"
   end
 end

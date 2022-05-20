@@ -8,8 +8,10 @@ class Room < ApplicationRecord
   validates :number, numericality: {greater_than_or_equal_to: 5, less_than_or_equal_to:30}
   validates :terms_of_use, absence: true, unless: :name?
   validates :terms_of_use, length: {maximum: 10}
+  validates :images, presence: true
   
   has_many :entries, dependent: :destroy
+  has_many_attached :images
 
   private
 

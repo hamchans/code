@@ -20,6 +20,13 @@
   <%= @room.terms_of_use %>
 </p>
 
+<p>
+  <strong>images:</strong>
+  <% @room.images.each do |image| %>
+    <%= image_tag image, class: "image" %>
+  <% end %>
+</p>
+
 <h3>予約状況</h3>
 
 <% @room.entries.each do |ent| %>
