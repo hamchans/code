@@ -1,14 +1,3 @@
-.main {
-  .new_room {
-    background-color: #ccc;
-  }
-  .actions {
-    &:hover {
-      color: red;
-      background-color: blue;
-    }
-  }
-}
 header {
   background-color: orange;
   li {

@@ -44479,3 +44479,1612 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 107ms (Views: 86.3ms | ActiveRecord: 0.7ms | Allocations: 9809)
 
 
+Started GET "/rooms/11/edit" for ::1 at 2022-05-27 18:16:00 +0900
+Processing by RoomsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 5.8ms | Allocations: 1676)
+  Rendered rooms/edit.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2065)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 6302)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 0.4ms | Allocations: 7930)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:16:02 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 8704)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 12920)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 1.7ms | Allocations: 13326)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:16:06 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (2.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 1.8ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 3.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 29.0ms | Allocations: 4633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 8849)
+Completed 200 OK in 55ms (Views: 46.8ms | ActiveRecord: 2.9ms | Allocations: 9793)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:16:08 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 47.0ms | Allocations: 8702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 12918)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.8ms | Allocations: 13323)
+
+
+Started GET "/rooms/11/edit" for ::1 at 2022-05-27 18:16:09 +0900
+Processing by RoomsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 9.5ms | Allocations: 1272)
+  Rendered rooms/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5621)
+Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 7124)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:16:10 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 24.5ms | Allocations: 8702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 12942)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 2.2ms | Allocations: 13347)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:16:11 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.9ms | Allocations: 777)
+  Rendered entries/_entry.html.erb (Duration: 0.6ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 20.4ms | Allocations: 4631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 8871)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 1.1ms | Allocations: 9814)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:17:38 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.7ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 5319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 10037)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.7ms | Allocations: 11786)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:17:49 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.6ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.9ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 10031)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.8ms | Allocations: 11774)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:25:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.1ms | Allocations: 1001)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 10126)
+Completed 200 OK in 41ms (Views: 32.5ms | ActiveRecord: 3.2ms | Allocations: 12483)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:25:58 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.0ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 10054)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.9ms | Allocations: 11803)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:26:08 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.2ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 5312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 10031)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 1.0ms | Allocations: 11773)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:26:13 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.7ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 10031)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.9ms | Allocations: 11780)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:26:20 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.3ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 10040)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.8ms | Allocations: 11783)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:26:25 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.8ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 10060)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.7ms | Allocations: 11809)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:26:56 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.7ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.9ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4635)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 8860)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.7ms | Allocations: 9802)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:27:04 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.6ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 10031)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.6ms | Allocations: 11779)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:27:17 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.2ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 10031)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.8ms | Allocations: 11780)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:33:45 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 9814)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 14061)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 4.0ms | Allocations: 14595)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:33:47 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.4ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4673)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 8913)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 1.4ms | Allocations: 9877)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:33:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 106.9ms | Allocations: 17964)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 110.0ms | Allocations: 22090)
+Completed 200 OK in 114ms (Views: 97.8ms | ActiveRecord: 13.2ms | Allocations: 23034)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:33:50 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozODo1MC4xNTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--e11d27041b86d7d63d83066bde24dccbc7f3e9d5/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozODo1MC4xNTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--e11d27041b86d7d63d83066bde24dccbc7f3e9d5/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2968)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozODo1MC4xNTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--e11d27041b86d7d63d83066bde24dccbc7f3e9d5/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:33:50 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:34:01 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7731)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 1.0ms | Allocations: 8675)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:34:24 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3892)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 8641)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.8ms | Allocations: 10391)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:24 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOToyNC40NTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ea72322e5e10a9aa2ce5aedd6147d8d1d0d4a8c/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOToyNC40NTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ea72322e5e10a9aa2ce5aedd6147d8d1d0d4a8c/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1479)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOToyNC40NTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ea72322e5e10a9aa2ce5aedd6147d8d1d0d4a8c/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:24 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:34:43 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 7764)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.9ms | Allocations: 8706)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:43 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo0My42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--e16b090cab2cedbfbad2f9854054efdd18fba469/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo0My42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--e16b090cab2cedbfbad2f9854054efdd18fba469/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo0My42NzNaIiwicHVyIjoiYmxvYl9rZXkifX0=--e16b090cab2cedbfbad2f9854054efdd18fba469/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:43 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:34:54 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 3887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 8614)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.8ms | Allocations: 10357)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:54 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo1NC41MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--355196ad8a98ac6d7bc85cca7d3e1311f9d68b64/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo1NC41MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--355196ad8a98ac6d7bc85cca7d3e1311f9d68b64/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTozOTo1NC41MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--355196ad8a98ac6d7bc85cca7d3e1311f9d68b64/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:34:54 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:35:32 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.9ms | Allocations: 3887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 8632)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 0.8ms | Allocations: 10375)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:32 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDozMi43MTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--76f60aabc00a145a5747455df4dd4d9200b6d755/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDozMi43MTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--76f60aabc00a145a5747455df4dd4d9200b6d755/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDozMi43MTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--76f60aabc00a145a5747455df4dd4d9200b6d755/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:32 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:35:43 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8630)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 1.3ms | Allocations: 10379)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:43 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo0My4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--816f70350792ddf0e880d97568bb859d0ae98fa0/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo0My4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--816f70350792ddf0e880d97568bb859d0ae98fa0/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo0My4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--816f70350792ddf0e880d97568bb859d0ae98fa0/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:43 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:35:51 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 8628)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.8ms | Allocations: 10371)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:51 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo1MS42NDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--701155270df0f0091b28f76315f7042af2b09acb/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo1MS42NDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--701155270df0f0091b28f76315f7042af2b09acb/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MDo1MS42NDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--701155270df0f0091b28f76315f7042af2b09acb/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:35:51 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:37:25 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:17
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 3524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 7740)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.8ms | Allocations: 8682)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:37:25 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjoyNS43NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--02a467375536dfde61e2dfee96b335312dd91c2a/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjoyNS43NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--02a467375536dfde61e2dfee96b335312dd91c2a/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjoyNS43NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--02a467375536dfde61e2dfee96b335312dd91c2a/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:37:25 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:37:39 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:18
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3894)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 8637)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.9ms | Allocations: 10386)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:37:39 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjozOS42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b8e3c43dd3d30fe1c9a34c3dde5c8e0574dee6d/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjozOS42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b8e3c43dd3d30fe1c9a34c3dde5c8e0574dee6d/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MjozOS42MzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b8e3c43dd3d30fe1c9a34c3dde5c8e0574dee6d/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:37:39 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:38:10 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 8632)
+Completed 200 OK in 36ms (Views: 30.3ms | ActiveRecord: 1.0ms | Allocations: 10381)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:10 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoxMC44MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--c6174458648fa98e0faebe9ae8f2277fda38b488/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoxMC44MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--c6174458648fa98e0faebe9ae8f2277fda38b488/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoxMC44MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--c6174458648fa98e0faebe9ae8f2277fda38b488/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:10 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:38:26 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 8632)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 0.9ms | Allocations: 10375)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:26 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoyNi4yNjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f08cbef034415432f19a329153a96505e7c570e0/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoyNi4yNjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f08cbef034415432f19a329153a96505e7c570e0/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0MzoyNi4yNjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--f08cbef034415432f19a329153a96505e7c570e0/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:26 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:38:43 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 8619)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.9ms | Allocations: 10367)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:43 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo0My44MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--170db011554f11f6d671f7e32c840cc975efbbf2/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo0My44MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--170db011554f11f6d671f7e32c840cc975efbbf2/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1475)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo0My44MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--170db011554f11f6d671f7e32c840cc975efbbf2/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:43 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:38:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 8626)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 1.0ms | Allocations: 10375)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:50 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo1MC44ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--5d3fafc4a6f10cf45efbeee676f7732862d6e8a4/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo1MC44ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--5d3fafc4a6f10cf45efbeee676f7732862d6e8a4/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Mzo1MC44ODRaIiwicHVyIjoiYmxvYl9rZXkifX0=--5d3fafc4a6f10cf45efbeee676f7732862d6e8a4/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:38:50 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:39:01 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 8639)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.8ms | Allocations: 10388)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:39:01 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDowMS40ODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--37f906ad235789415dd72a516da8162780e7409b/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDowMS40ODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--37f906ad235789415dd72a516da8162780e7409b/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1475)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDowMS40ODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--37f906ad235789415dd72a516da8162780e7409b/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:39:01 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:39:14 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 8621)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.9ms | Allocations: 10369)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:39:14 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDoxNC4xODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7e5d1f94d3b90a4927c386ebc99e3f825bbbebd6/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDoxNC4xODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7e5d1f94d3b90a4927c386ebc99e3f825bbbebd6/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1475)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NDoxNC4xODFaIiwicHVyIjoiYmxvYl9rZXkifX0=--7e5d1f94d3b90a4927c386ebc99e3f825bbbebd6/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:39:14 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:40:55 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.9ms | Allocations: 3894)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.3ms | Allocations: 8620)
+Completed 200 OK in 117ms (Views: 108.3ms | ActiveRecord: 0.9ms | Allocations: 10369)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:40:55 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NTo1NS45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--c20e10591badbab4ea960b241ec4fb1b96d3f5ca/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NTo1NS45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--c20e10591badbab4ea960b241ec4fb1b96d3f5ca/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NTo1NS45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--c20e10591badbab4ea960b241ec4fb1b96d3f5ca/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:40:55 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:41:05 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3894)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 8629)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.8ms | Allocations: 10378)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:05 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjowNS45MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc36da078922cb758f5a61e8523285ad9a61baea/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjowNS45MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc36da078922cb758f5a61e8523285ad9a61baea/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjowNS45MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--fc36da078922cb758f5a61e8523285ad9a61baea/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:05 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:41:18 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8632)
+Completed 200 OK in 27ms (Views: 22.4ms | ActiveRecord: 0.9ms | Allocations: 10381)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:18 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjoxOC45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b975193bf0070948c8730d150709e3b869385700/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjoxOC45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b975193bf0070948c8730d150709e3b869385700/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjoxOC45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b975193bf0070948c8730d150709e3b869385700/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:18 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:41:37 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 8623)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.9ms | Allocations: 10371)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:38 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjozOC4wMjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3b551e96e85e5a1219592eb62d19037804cae17c/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjozOC4wMjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3b551e96e85e5a1219592eb62d19037804cae17c/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NjozOC4wMjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--3b551e96e85e5a1219592eb62d19037804cae17c/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:38 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:41:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 8620)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 1.0ms | Allocations: 10369)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:50 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Njo1MC4yOTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--50727a00c7472fc7824bdb5917c0eaa928c98e63/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Njo1MC4yOTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--50727a00c7472fc7824bdb5917c0eaa928c98e63/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1480)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Njo1MC4yOTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--50727a00c7472fc7824bdb5917c0eaa928c98e63/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:41:50 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:42:02 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8632)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 1.0ms | Allocations: 10381)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:02 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzowMi43MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--59b6c7476883decc3c14b5221da4ead93e433849/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzowMi43MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--59b6c7476883decc3c14b5221da4ead93e433849/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzowMi43MTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--59b6c7476883decc3c14b5221da4ead93e433849/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:02 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:42:29 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8631)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.8ms | Allocations: 10379)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:29 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzoyOS41NzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8720e468d4e2507310e1deba0191013e474add8a/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzoyOS41NzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8720e468d4e2507310e1deba0191013e474add8a/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0NzoyOS41NzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--8720e468d4e2507310e1deba0191013e474add8a/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:29 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:42:46 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 7866)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.9ms | Allocations: 8808)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:46 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo0Ni4xODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b937490a91f2dabc73533dd024dba9ee84d9127c/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo0Ni4xODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b937490a91f2dabc73533dd024dba9ee84d9127c/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo0Ni4xODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--b937490a91f2dabc73533dd024dba9ee84d9127c/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:46 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 297)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:42:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8631)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 1.0ms | Allocations: 10380)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:50 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo1MC4zMDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--432a11dff60e6a2580965d58dcfc718ab21d55a5/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo1MC4zMDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--432a11dff60e6a2580965d58dcfc718ab21d55a5/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo0Nzo1MC4zMDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--432a11dff60e6a2580965d58dcfc718ab21d55a5/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:42:50 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:48:21 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3614)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.9ms | Allocations: 28968)
+Completed 200 OK in 100ms (Views: 90.7ms | ActiveRecord: 1.5ms | Allocations: 30523)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:21 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--1619d2f1bc864dfc98183635324b3afd0ce7b4c4/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--1619d2f1bc864dfc98183635324b3afd0ce7b4c4/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyMS4xNjNaIiwicHVyIjoiYmxvYl9rZXkifX0=--1619d2f1bc864dfc98183635324b3afd0ce7b4c4/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:21 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:48:25 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 7755)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.8ms | Allocations: 8696)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:25 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyNS41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6e757b1d442f5e7af2067a4f3f980e56abfe816c/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyNS41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6e757b1d442f5e7af2067a4f3f980e56abfe816c/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1475)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1MzoyNS41NjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--6e757b1d442f5e7af2067a4f3f980e56abfe816c/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:25 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:48:47 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.5ms | Allocations: 22937)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 1.1ms | Allocations: 23878)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:47 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1Mzo0Ny45NjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--f31c62d92e77fa7d60168969904661f3bed0b2de/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1Mzo0Ny45NjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--f31c62d92e77fa7d60168969904661f3bed0b2de/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1Mzo0Ny45NjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--f31c62d92e77fa7d60168969904661f3bed0b2de/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:48:47 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:49:07 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 23853)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.7ms | Allocations: 24794)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:49:07 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDowNy45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--d300ed8e494dcfe97511699dd309f12373fc2b18/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDowNy45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--d300ed8e494dcfe97511699dd309f12373fc2b18/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDowNy45NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--d300ed8e494dcfe97511699dd309f12373fc2b18/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:49:07 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/rooms/72" for ::1 at 2022-05-27 18:49:37 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 72], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:20
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 72]]
+  ↳ app/views/rooms/show.html.erb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 8632)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 1.0ms | Allocations: 10381)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:49:37 +0900
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12cd638be92aeec43b7a5dee31b5a9d810a5f9cf", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: za8kttpoafoa7sfll17hbw429wtv (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDozNy4yNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--d197bde77cf28cc7f74bee05235f1c3020fcbc79/Screen%20Shot%202022-05-20%20at%2014.55.36.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDozNy4yNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--d197bde77cf28cc7f74bee05235f1c3020fcbc79/Screen%20Shot%202022-05-20%20at%2014.55.36.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1474)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUU0YTNSMGNHOWhabTloTjNObWJHd3hOMmhpZHpReU9YZDBkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxiaUJUYUc5MElESXdNakl0TURVdE1qQWdZWFFnTVRRdU5UVXVNell1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFRZM0psWlc0bE1qQlRhRzkwSlRJd01qQXlNaTB3TlMweU1DVXlNR0YwSlRJd01UUXVOVFV1TXpZdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMi0wNS0yN1QwOTo1NDozNy4yNDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--d197bde77cf28cc7f74bee05235f1c3020fcbc79/Screen%20Shot%202022-05-20%20at%2014.55.36.png" for ::1 at 2022-05-27 18:49:37 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screen Shot 2022-05-20 at 14.55.36"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
