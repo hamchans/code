@@ -41838,3 +41838,2644 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.4ms | Allocations: 6934)
 
 
+Started GET "/" for ::1 at 2022-05-27 10:19:46 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 7449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 17227)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.6ms | Allocations: 20918)
+
+
+Started GET "/" for ::1 at 2022-05-27 10:58:23 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5615)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.7ms | Allocations: 5997)
+
+
+Started GET "/" for ::1 at 2022-05-27 10:58:26 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4911)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 5291)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 10:58:28 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 12477)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 16686)
+Completed 200 OK in 32ms (Views: 23.0ms | ActiveRecord: 1.0ms | Allocations: 20493)
+
+
+Started GET "/rails/info/routes" for ::1 at 2022-05-27 10:58:31 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [71 times] (Duration: 13.3ms | Allocations: 7650)
+  Rendered /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 4.0ms | Allocations: 918)
+  Rendered /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 22.9ms | Allocations: 15084)
+  Rendered layout /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb (Duration: 23.5ms | Allocations: 15307)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 16525)
+
+
+Started GET "/rails/info/routes" for ::1 at 2022-05-27 10:58:32 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [71 times] (Duration: 10.4ms | Allocations: 7766)
+  Rendered /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.9ms | Allocations: 808)
+  Rendered /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 18.8ms | Allocations: 15517)
+  Rendered layout /Users/kohki.y/.rbenv/versions/2.7.3/lib/ruby/gems/2.7.0/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb (Duration: 19.4ms | Allocations: 16001)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 17290)
+
+
+Started GET "/" for ::1 at 2022-05-27 10:59:21 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 5711)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.3ms | Allocations: 6884)
+
+
+Started GET "/top/index" for ::1 at 2022-05-27 10:59:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4921)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 5303)
+
+
+Started GET "/" for ::1 at 2022-05-27 10:59:32 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4948)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 5329)
+
+
+Started GET "/" for ::1 at 2022-05-27 10:59:32 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4911)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 5294)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:01:08 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3344)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 3409)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 4572)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>予約管理のページへ　ようこそ</h1>
+<% Time,current %>
+<p>こちらは会議室予約システムの予約ページです．</p>
+<% if logged_in? %>
+  <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+<% end %>
+
+):
+1:    <h1>予約管理のページへ　ようこそ</h1>
+2:    <% Time,current %>
+3:    <p>こちらは会議室予約システムの予約ページです．</p>
+4:    <% if logged_in? %>
+5:      <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+6:    <% end %>
+  
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+app/views/top/index.html.erb:2: dynamic constant assignment
+app/views/top/index.html.erb:2: syntax error, unexpected '\n', expecting '='
+Started GET "/" for ::1 at 2022-05-27 11:01:25 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5523)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.2ms | Allocations: 6711)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:01:27 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 711)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4929)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms | Allocations: 5317)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:02:15 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 828)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5496)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 6677)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:02:21 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 7159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 17326)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 21090)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:02:22 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 710)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4928)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.3ms | Allocations: 5314)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:02:38 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5517)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 6703)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:04:00 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4916)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 5297)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:04:18 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 7169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 17383)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 0.4ms | Allocations: 20969)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:04:19 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4932)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 5318)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:04:47 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 5432)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 5496)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 6651)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `月' for #<ActionView::Base:0x00000000009df8>):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <%= Time.now 月 %>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 11:04:55 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5776)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.3ms | Allocations: 7067)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:05:35 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 842)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 5510)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.2ms | Allocations: 6689)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:06:22 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 710)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4926)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 5307)
+
+
+Started GET "/" for ::1 at 2022-05-27 11:06:24 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2271)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2335)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3491)
+
+
+  
+ActionView::Template::Error (undefined method `date' for Fri, 27 May 2022:Date):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.date %> 日
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 11:06:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2264)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2329)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3493)
+
+
+  
+ActionView::Template::Error (undefined method `date' for Fri, 27 May 2022:Date):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.date %> 日</p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 11:07:07 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2377)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3541)
+
+
+  
+ActionView::Template::Error (undefined method `months' for Fri, 27 May 2022:Date
+Did you mean?  month):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.months %> 月 <%= Date.current.date %> 日</p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 11:07:21 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2261)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2325)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3482)
+
+
+  
+ActionView::Template::Error (undefined method `date' for Fri, 27 May 2022:Date):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.date %> 日</p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 11:07:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2259)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2323)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3480)
+
+
+  
+ActionView::Template::Error (undefined method `dates' for Fri, 27 May 2022:Date):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.dates %> 日</p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 13:41:41 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1608)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.9ms | Allocations: 6318)
+Completed 200 OK in 78ms (Views: 75.8ms | ActiveRecord: 1.2ms | Allocations: 7504)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:42:42 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 5591)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.1ms | Allocations: 6770)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:42:56 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 103.6ms | Allocations: 5600)
+Completed 200 OK in 131ms (Views: 119.9ms | ActiveRecord: 0.1ms | Allocations: 6779)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:47:01 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 41.3ms | Allocations: 2856)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 2921)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 4075)
+
+
+  
+ActionView::Template::Error (undefined method `minute' for Fri, 27 May 2022 13:47:01.845421000 JST +09:00:Time):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.minute %></p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 13:47:11 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2899)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2963)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4123)
+
+
+  
+ActionView::Template::Error (undefined method `minuite' for Fri, 27 May 2022 13:47:11.177240000 JST +09:00:Time):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.minuite %></p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 13:47:20 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 935)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5645)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.2ms | Allocations: 6830)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:47:40 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1287)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2438)
+
+
+  
+ActionView::Template::Error (String can't be coerced into Integer):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min + "分"%></p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2:in `+'
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 13:47:55 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1222)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1286)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2443)
+
+
+  
+ActionView::Template::Error (String can't be coerced into Integer):
+    1: <h1>予約管理のページへようこそ</h1>
+    2: <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min + "分" %></p>
+    3: <p>こちらは会議室予約システムの予約ページです．</p>
+    4: <% if logged_in? %>
+    5:   <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+  
+app/views/top/index.html.erb:2:in `+'
+app/views/top/index.html.erb:2
+Started GET "/" for ::1 at 2022-05-27 13:49:01 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1244)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2402)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>予約管理のページへようこそ</h1>
+<%= Date.current.strftime(‘%Y 年 %m 月 %d 日’) %>
+<p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min + "分" %></p>
+<p>こちらは会議室予約システムの予約ページです．</p>
+<% if logged_in? %>
+  <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+<% end %>
+
+):
+1:    <h1>予約管理のページへようこそ</h1>
+2:    <%= Date.current.strftime(‘%Y 年 %m 月 %d 日’) %>
+3:    <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min + "分" %></p>
+4:    <p>こちらは会議室予約システムの予約ページです．</p>
+5:    <% if logged_in? %>
+6:      <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+7:    <% end %>
+  
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+Started GET "/" for ::1 at 2022-05-27 13:49:10 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1174)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1239)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2398)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>予約管理のページへようこそ</h1>
+<%= Date.current.strftime(‘%Y 年 %m 月 %d 日’) %>
+<p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min %></p>
+<p>こちらは会議室予約システムの予約ページです．</p>
+<% if logged_in? %>
+  <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+<% end %>
+
+):
+1:    <h1>予約管理のページへようこそ</h1>
+2:    <%= Date.current.strftime(‘%Y 年 %m 月 %d 日’) %>
+3:    <p><%= Date.current.year %> 年 <%= Date.current.month %> 月 <%= Date.current.day %> 日 <%= Time.current.hour %> 時 <%= Time.current.min %></p>
+4:    <p>こちらは会議室予約システムの予約ページです．</p>
+5:    <% if logged_in? %>
+6:      <p><%= link_to '会議室予約システム予約ページはこちら', rooms_path %></p>
+7:    <% end %>
+  
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+app/views/top/index.html.erb:2: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/top/index.html.erb:2: unknown type of %string
+Started GET "/" for ::1 at 2022-05-27 13:49:26 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5680)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.2ms | Allocations: 6867)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:49:50 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5636)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.2ms | Allocations: 6817)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:50:33 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 5641)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 6822)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:51:53 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5654)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.4ms | Allocations: 6835)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:51:55 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5013)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.3ms | Allocations: 5397)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:51:55 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 4989)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 5371)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:51:56 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4989)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms | Allocations: 5371)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:52:02 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 852)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5520)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 6708)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:52:28 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5538)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 6725)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:52:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5515)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.2ms | Allocations: 6696)
+
+
+Started GET "/" for ::1 at 2022-05-27 13:57:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 5514)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 6698)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 13:57:46 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (10.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 79.8ms | Allocations: 12577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.4ms | Allocations: 16784)
+Completed 200 OK in 207ms (Views: 86.0ms | ActiveRecord: 17.0ms | Allocations: 20646)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 13:57:48 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.3ms | Allocations: 1003)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 98)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 42.7ms | Allocations: 14543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 18667)
+Completed 200 OK in 53ms (Views: 46.3ms | ActiveRecord: 1.5ms | Allocations: 19870)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 13:58:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.8ms | Allocations: 989)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 4811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 9503)
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 0.9ms | Allocations: 11251)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-27 13:58:50 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 29.0ms | Allocations: 5059)
+  Rendered entries/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 5405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 9585)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.1ms | Allocations: 10658)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-27 13:58:58 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"山田光樹", "user_email"=>"koki@ham.com", "reserved_date"=>"2022-05-27T13:58", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 3.1ms | Allocations: 1103)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1506)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6352)
+Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 8188)
+
+
+Started POST "/rentals" for ::1 at 2022-05-27 13:58:59 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"山田光樹", "user_email"=>"koki@ham.com", "reserved_date"=>"2022-05-27T13:58", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (1.4ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "山田光樹"], ["user_email", "koki@ham.com"], ["reserved_date", "2022-05-27 04:58:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-27 04:59:00.013122"], ["updated_at", "2022-05-27 04:59:00.013122"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering notice_mailer/register.html.erb within layouts/mailer
+  Rendered notice_mailer/register.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 160)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 331)
+  Rendering layout layouts/mailer.text.erb
+  Rendering notice_mailer/register.text.erb within layouts/mailer
+  Rendered notice_mailer/register.text.erb within layouts/mailer (Duration: 0.4ms | Allocations: 148)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 298)
+NoticeMailer#register: processed outbound mail in 8.9ms
+Delivered mail 62905a94104b3_5f8b50dc510d2@Kohki-Mac.local.mail (1188.2ms)
+Date: Fri, 27 May 2022 13:59:00 +0900
+From: hamhamsterdragon@gmail.com
+To: koki@ham.com
+Cc: koki.victory.630@keio.jp
+Message-ID: <62905a94104b3_5f8b50dc510d2@Kohki-Mac.local.mail>
+Subject: =?UTF-8?Q?=E4=BC=9A=E8=AD=B0=E5=AE=A4=E4=BA=88=E7=B4=84=E7=A2=BA=E5=AE=9A=E3=81=AE=E3=81=94=E6=A1=88=E5=86=85?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_62905a94ea7d_5f8b50dc5099a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_62905a94ea7d_5f8b50dc5099a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+5bGx55Sw5YWJ5qi544GV44KT77yM55Sz44GX6L6844G/44GC44KK44GM44Go
+44GG44GU44GW44GE44G+44GZ77yODQoNCuips+OBl+OBj+OBr++8jDxhIGhy
+ZWY9Imh0dHA6Ly93d3cuZXhhbXBsZS5jb20iPuOBk+OBoeOCiTwvYT7jgpLj
+gq/jg6rjg4Pjgq/jgZfjgabjgY/jgaDjgZXjgYTvvI4NCg0K
+
+----==_mimepart_62905a94ea7d_5f8b50dc5099a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiIC8+DQogICAgPHN0eWxlPg0KICAgICAgLyogRW1h
+aWwgc3R5bGVzIG5lZWQgdG8gYmUgaW5saW5lICovDQogICAgPC9zdHlsZT4N
+CiAgPC9oZWFkPg0KDQogIDxib2R5Pg0KICAgIDxoMj7lsbHnlLDlhYnmqLnj
+gZXjgpPvvIznlLPjgZfovrzjgb/jgYLjgorjgYzjgajjgYbjgZTjgZbjgYTj
+gb7jgZnvvI48L2gyPg0KDQo8cD4NCiAg6Kmz44GX44GP44Gv77yMPGEgaHJl
+Zj0iaHR0cDovL3d3dy5leGFtcGxlLmNvbSI+44GT44Gh44KJPC9hPuOCkuOC
+r+ODquODg+OCr+OBl+OBpuOBj+OBoOOBleOBhO+8jg0KPC9wPg0KDQogIDwv
+Ym9keT4NCjwvaHRtbD4NCg==
+
+----==_mimepart_62905a94ea7d_5f8b50dc5099a--
+
+Completed 500 Internal Server Error in 1254ms (ActiveRecord: 2.7ms | Allocations: 28897)
+
+
+  
+Net::SMTPAuthenticationError (535-5.7.8 Username and Password not accepted. Learn more at
+):
+  
+app/controllers/entries_controller.rb:12:in `block in create'
+app/controllers/entries_controller.rb:10:in `create'
+Started POST "/rentals" for ::1 at 2022-05-27 13:59:57 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"山田光樹", "user_email"=>"koki@ham.com", "reserved_date"=>"2022-05-27T13:58", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/entries_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (0.2ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "山田光樹"], ["user_email", "koki@ham.com"], ["reserved_date", "2022-05-27 04:58:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-27 04:59:58.057283"], ["updated_at", "2022-05-27 04:59:58.057283"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 16ms (ActiveRecord: 1.9ms | Allocations: 14928)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 13:59:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 11.3ms | Allocations: 5505)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 26.8ms | Allocations: 11694)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 15845)
+Completed 200 OK in 41ms (Views: 34.6ms | ActiveRecord: 2.2ms | Allocations: 17076)
+
+
+Started GET "/rentals/new?room_id=11" for ::1 at 2022-05-27 14:00:07 +0900
+Processing by EntriesController#new as HTML
+  Parameters: {"room_id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering entries/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_form.html.erb (Duration: 5.7ms | Allocations: 2019)
+  Rendered entries/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2133)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 6353)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 6889)
+
+
+Started POST "/rentals/confirm" for ::1 at 2022-05-27 14:00:12 +0900
+Processing by EntriesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"山田光樹", "user_email"=>"koki@ham.com", "reserved_date"=>"2022-05-28T14:00", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Create Entry"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:36:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering entries/confirm.html.erb within layouts/application
+  Rendered entries/_confirm.html.erb (Duration: 2.1ms | Allocations: 741)
+  Rendered entries/confirm.html.erb within layouts/application (Duration: 2.7ms | Allocations: 844)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5683)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 7119)
+
+
+Started POST "/rentals" for ::1 at 2022-05-27 14:00:13 +0900
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "entry"=>{"user_name"=>"山田光樹", "user_email"=>"koki@ham.com", "reserved_date"=>"2022-05-28T14:00", "usage_time"=>"1", "people"=>"1", "room_id"=>"11"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mEntry Create (0.6ms)[0m  [1m[32mINSERT INTO "entries" ("user_name", "user_email", "reserved_date", "usage_time", "room_id", "people", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_name", "山田光樹"], ["user_email", "koki@ham.com"], ["reserved_date", "2022-05-28 05:00:00"], ["usage_time", 1.0], ["room_id", 11], ["people", 1], ["created_at", "2022-05-27 05:00:13.404645"], ["updated_at", "2022-05-27 05:00:13.404645"]]
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `block in create'
+Redirected to http://localhost:3000/rooms/11
+Completed 302 Found in 15ms (ActiveRecord: 2.1ms | Allocations: 3598)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:00:13 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 777)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 4633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 8849)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 1.0ms | Allocations: 9797)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:01:27 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.6ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.4ms | Allocations: 5321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 10011)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 1.0ms | Allocations: 11760)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:03:02 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.1ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 10011)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.9ms | Allocations: 11760)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:03:18 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:25
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.1ms | Allocations: 988)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 19.0ms | Allocations: 5318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 9986)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.9ms | Allocations: 11728)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:04:57 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.3ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 9981)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.7ms | Allocations: 11723)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:17:09 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.7ms | Allocations: 805)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 8942)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 2.8ms | Allocations: 10498)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:31:42 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (1.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.5ms | Allocations: 1014)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5380)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 6044)
+Completed 200 OK in 28ms (Views: 17.8ms | ActiveRecord: 3.3ms | Allocations: 8407)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:33:33 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.3ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 1.5ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.6ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 4854)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.8ms | Allocations: 5795)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:34:46 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.8ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.7ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5307)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 5971)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.9ms | Allocations: 7713)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:34:47 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.4ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.8ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 23.3ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4854)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 1.2ms | Allocations: 5795)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 14:34:51 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.1ms | Allocations: 777)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4631)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4850)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.7ms | Allocations: 5791)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 14:34:55 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 9126)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 9352)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 1.5ms | Allocations: 9882)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:34:57 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1071)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 2031)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 14:35:02 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 8712)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 8938)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 1.1ms | Allocations: 9341)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:35:11 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 929)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:35:12 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 929)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 1309)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:35:48 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1509)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 2689)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:35:49 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 929)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:37:48 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 849)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1531)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 2717)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:41:41 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1514)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 2694)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:41:42 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 929)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:44:57 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 929)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:45:59 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 929)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 1309)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:56:40 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 27.1ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 2255)
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 4.0ms | Allocations: 3439)
+
+
+Started GET "/" for ::1 at 2022-05-27 14:57:50 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 1543)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.2ms | Allocations: 2723)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:05:43 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1546)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 2250)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 2.2ms | Allocations: 3429)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:17:57 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1414)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 1633)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 2.5ms | Allocations: 2014)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:18:30 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1553)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 2739)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:18:45 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1548)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 2728)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:20:33 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 1507)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.2ms | Allocations: 2687)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:20:54 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1506)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 2685)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:21:35 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 9076)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 9302)
+Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 1.5ms | Allocations: 10284)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 15:22:02 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.3ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 5348)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 5574)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 1.3ms | Allocations: 6662)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 15:43:02 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.3ms | Allocations: 1014)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 5378)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6043)
+Completed 200 OK in 27ms (Views: 12.7ms | ActiveRecord: 7.1ms | Allocations: 8406)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 15:43:48 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 5308)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 5978)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.6ms | Allocations: 7722)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:45:49 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1067)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 2031)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:46:39 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 929)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:46:40 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 844)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1513)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 2692)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:46:42 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 929)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 1310)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:46:46 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 1512)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 2692)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:46:53 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1511)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 2690)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:46:55 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 9075)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 9301)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 2.0ms | Allocations: 10283)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:47:04 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 848)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1517)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 2703)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:47:09 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 844)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1513)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 2694)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:47:33 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1512)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 2697)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:49:32 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1512)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2691)
+
+
+Started GET "/" for ::1 at 2022-05-27 15:49:40 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 844)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1513)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 2692)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:55:47 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mRoom Load (1.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:33
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:34
+  Rendered rooms/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 9801)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 10027)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 4.2ms | Allocations: 11009)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:59:02 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 9070)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 9744)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.9ms | Allocations: 10954)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:59:10 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 18.7ms | Allocations: 9057)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 9730)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.7ms | Allocations: 10935)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:59:14 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 9056)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 9730)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.8ms | Allocations: 10933)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 15:59:21 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 9056)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 9729)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.7ms | Allocations: 10938)
+
+
+Started GET "/rooms/24" for ::1 at 2022-05-27 16:09:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 24], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 24]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2941)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3167)
+Completed 200 OK in 21ms (Views: 9.8ms | ActiveRecord: 3.7ms | Allocations: 4851)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:10:02 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.2ms | Allocations: 988)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 4972)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 5198)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.8ms | Allocations: 6140)
+
+
+Started GET "/rooms/13/edit" for ::1 at 2022-05-27 16:10:05 +0900
+Processing by RoomsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/edit.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (Duration: 42.6ms | Allocations: 4009)
+  Rendered rooms/edit.html.erb within layouts/application (Duration: 44.7ms | Allocations: 4395)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 4619)
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 0.3ms | Allocations: 6247)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:10:07 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.8ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 4854)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.7ms | Allocations: 5796)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:12:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.4ms | Allocations: 1003)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5324)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5996)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.7ms | Allocations: 7743)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:15:47 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 8.8ms | Allocations: 1002)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 18.7ms | Allocations: 5322)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 5997)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 1.4ms | Allocations: 7744)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:16:10 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 997)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5319)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5996)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.8ms | Allocations: 7745)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:16:42 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.7ms | Allocations: 997)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 5319)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5995)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.7ms | Allocations: 7738)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:17:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.9ms | Allocations: 842)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 4752)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 4971)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.7ms | Allocations: 5913)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:17:25 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.4ms | Allocations: 990)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5311)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 5986)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.8ms | Allocations: 7733)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:20:07 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.9ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4854)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 5796)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:20:08 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.8ms | Allocations: 990)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5316)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5991)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.9ms | Allocations: 7740)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:20:09 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.3ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4854)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.6ms | Allocations: 5795)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:20:28 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.2ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 5309)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5984)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.8ms | Allocations: 7727)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 16:21:12 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.8ms | Allocations: 987)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5308)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5983)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.7ms | Allocations: 7731)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 17:27:14 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mRoom Load (5.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 73.3ms | Allocations: 9814)
+  Rendered layout layouts/application.html.erb (Duration: 73.9ms | Allocations: 10040)
+Completed 200 OK in 103ms (Views: 75.8ms | ActiveRecord: 10.7ms | Allocations: 10571)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 17:31:07 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 962)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 1.5ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 22.2ms | Allocations: 5346)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 6021)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 1.1ms | Allocations: 7789)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 17:31:42 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.7ms | Allocations: 958)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 1.9ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 19.9ms | Allocations: 5299)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 5974)
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 0.8ms | Allocations: 7722)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 17:32:16 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 2.6ms | Allocations: 959)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 5305)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 5980)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.7ms | Allocations: 7729)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 17:32:53 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.5ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 4635)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4854)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.7ms | Allocations: 5796)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:11:06 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  [1m[36mRoom Load (4.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 11.7ms | Allocations: 1003)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 55.8ms | Allocations: 5502)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 6178)
+Completed 200 OK in 115ms (Views: 89.8ms | ActiveRecord: 8.1ms | Allocations: 8541)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:13:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 3.0ms | Allocations: 971)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.6ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5314)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 10058)
+Completed 200 OK in 70ms (Views: 51.8ms | ActiveRecord: 0.6ms | Allocations: 11807)
+
+
+Started GET "/" for ::1 at 2022-05-27 18:14:07 +0900
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered top/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 5065)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 6032)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:14:20 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 88.3ms | Allocations: 9087)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 116.9ms | Allocations: 13310)
+Completed 200 OK in 119ms (Views: 116.7ms | ActiveRecord: 1.2ms | Allocations: 13838)
+
+
+Started GET "/rooms" for ::1 at 2022-05-27 18:14:26 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (2.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:35
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("rooms"."number") FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:36
+  Rendered rooms/index.html.erb within layouts/application (Duration: 61.8ms | Allocations: 8702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.6ms | Allocations: 12918)
+Completed 200 OK in 80ms (Views: 73.5ms | ActiveRecord: 2.6ms | Allocations: 13323)
+
+
+Started GET "/rooms/11" for ::1 at 2022-05-27 18:14:27 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:67:in `set_room'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 11], ["record_type", "Room"], ["name", "images"]]
+  ↳ app/views/rooms/show.html.erb:16
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."room_id" = ?[0m  [["room_id", 11]]
+  ↳ app/views/rooms/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/auths_helper.rb:3:in `current_user'
+  Rendered entries/_entry.html.erb (Duration: 4.3ms | Allocations: 778)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 99)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered entries/_entry.html.erb (Duration: 0.1ms | Allocations: 97)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 62.5ms | Allocations: 4633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 85.5ms | Allocations: 8865)
+Completed 200 OK in 107ms (Views: 86.3ms | ActiveRecord: 0.7ms | Allocations: 9809)
+
+

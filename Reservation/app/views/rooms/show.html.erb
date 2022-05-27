@@ -1,37 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
   <strong>Name:</strong>
   <%= @room.name %>
-</p>
 
-<p>
   <strong>Place:</strong>
   <%= @room.place %>
-</p>
 
-<p>
   <strong>Number:</strong>
   <%= @room.number %>
-</p>
 
-<p>
   <strong>Terms of use:</strong>
   <%= @room.terms_of_use %>
-</p>
 
-<p>
   <strong>images:</strong>
   <% @room.images.each do |image| %>
     <%= image_tag image, class: "image" %>
   <% end %>
-</p>
 
 <h3>予約状況</h3>
 
-<% @room.entries.each do |ent| %>
-  <%= render "entries/entry",entry: ent %>
-<% end %>
+<table>
+    <thead>
+      <tr>
+        <th>予約者</th>
+        <th>Email</th>
+        <th>予約日時</th>
+        <th>使用時間</th>
+        <th>使用人数</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @room.entries.each do |ent| %>
+        <%= render "entries/entry",entry: ent %>
+      <% end %>
+    </tbody>
+  </table>
 
 <% if current_user.admin %>
   <%= link_to 'Edit', edit_room_path(@room) %> |
