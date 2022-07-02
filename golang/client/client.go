@@ -6,6 +6,8 @@ import (
 	"log"
 	"net"
 	"os"
+	"m/args"
+	"m/data"
 )
 
 func response(dst io.Writer, src io.Reader) {
@@ -14,12 +16,21 @@ func response(dst io.Writer, src io.Reader) {
 	}
 }
 
-func main() {
-	fmt.Println("count:", len(os.Args))
+var (
+	dest data.Socket
+)
 
-	for i, v := range os.Args {
-		fmt.Printf("args[%d] -> %s\n", i, v)
+func main() {
+	// whether Number of Command Line variable is correct or not
+	dest = args.Checkargs(os.Args) // dest.Port is Server IP address, dest.Ip is Server Port number
+
+	// whether IP address is correct or not, correct is 0 but not is -1
+	if args.CheckIP(dest.Ip) == -1 {
+		fmt.Println("Please input correct IP address!")
+		os.Exit(-1)
 	}
+
+	
 	destIP := os.Args[1]
 	fmt.Printf("%s\n", destIP)
 
