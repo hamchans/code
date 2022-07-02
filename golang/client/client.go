@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net"
@@ -14,7 +15,15 @@ func response(dst io.Writer, src io.Reader) {
 }
 
 func main() {
-	conn, err := net.Dial("tcp", "192.168.11.23:8080")
+	fmt.Println("count:", len(os.Args))
+
+	for i, v := range os.Args {
+		fmt.Printf("args[%d] -> %s\n", i, v)
+	}
+	destIP := os.Args[1]
+	fmt.Printf("%s\n", destIP)
+
+	conn, err := net.Dial("tcp", destIP + ":8080")
 	if err != nil {
 		log.Fatal(err)
 	}
