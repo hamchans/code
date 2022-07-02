@@ -2,19 +2,13 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"log"
 	"net"
 	"os"
+	"m/client"
 	"m/args"
 	"m/data"
 )
-
-func response(dst io.Writer, src io.Reader) {
-	if _, err := io.Copy(dst, src); err != nil {
-		log.Fatal(err)
-	}
-}
 
 var (
 	dest data.Socket
@@ -40,6 +34,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	response(os.Stdout, conn)
+	client.Response(os.Stdout, conn)
 }
-
