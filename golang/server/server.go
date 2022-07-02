@@ -35,13 +35,12 @@ func echoHandler(conn *net.TCPConn) {
 }
 
 func main() {
-	tcpAddr, err := net.ResolveTCPAddr("tcp", ":8080")
+	tcpAddr, err := net.ResolveTCPAddr("tcp", "192.168.11.23:8080")
 	logFatal(err)
 
 	listener, err := net.ListenTCP("tcp", tcpAddr)
 	logFatal(err)
 
 	fmt.Println("Start TCP Server...")
-	fmt.Println(tcpAddr, listener)
 	receiveTCPConnection(listener)
 }
