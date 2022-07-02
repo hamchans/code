@@ -34,8 +34,26 @@ func echoHandler(conn *net.TCPConn) {
 	}
 }
 
+var (
+	self data.Socket
+)
+
 func main() {
-	tcpAddr, err := net.ResolveTCPAddr("tcp", "192.168.11.23:8080")
+	// whether Number of Command Line variable is correct or not
+	self = args.Checkargs(os.Args) // self.Ip is my IP address, self.Port is my Port number
+
+	// whether IP address is correct or not, correct is 0 but not is -1
+	if args.checkIP(self.Ip) == -1 {
+		fmt.Println("Please input correct IP address!")
+		os.Exit(-1))
+	}
+	// whether Port number is correct or not, correct is 0 but not is -1
+	if args.CheckPort(self.Port) == -1 {
+		fmt.Println("Please input correct Port number!")
+		os.Exit(-1)
+	}
+	
+	tcpAddr, err := net.ResolveTCPAddr("tcp", self.Ip + ":" + self.Port)
 	logFatal(err)
 
 	listener, err := net.ListenTCP("tcp", tcpAddr)

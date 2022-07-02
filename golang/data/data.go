@@ -1,5 +1,8 @@
 package data
 
-type Socket struct {
-	Ip, Port string
-}
+const (
+	Min8bit = 0
+	Max8bit = 255
+	Minport = 0
+	Maxport = 65535
+)
