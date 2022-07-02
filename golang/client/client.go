@@ -14,7 +14,7 @@ func response(dst io.Writer, src io.Reader) {
 }
 
 func main() {
-	conn, err := net.Dial("tcp", ":8080")
+	conn, err := net.Dial("tcp", "192.168.11.23:8080")
 	if err != nil {
 		log.Fatal(err)
 	}
