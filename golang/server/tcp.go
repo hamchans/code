@@ -18,7 +18,7 @@ func ReceiveTCPConnection(listener *net.TCPListener) {
 		conn, err := listener.AcceptTCP()
 
 		LogFatal(err)
-		echoHandler(conn)
+		go echoHandler(conn)
 	}
 }
 
