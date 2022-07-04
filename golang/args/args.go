@@ -20,3 +20,4 @@ func Checkargs(args []string) data.Socket {
         return data.Socket{"-2", "-2"}
     }
 }
+
