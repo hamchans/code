@@ -25,6 +25,6 @@ func main() {
 	fmt.Println("Response:")
 	fmt.Printf("%s", dumpResp)
 
-	file, _ := os.Create("save.jpg")
+	file, _ := os.Create("save.svg")
 	io.Copy(file, resp.Body)
 }
