@@ -1,7 +1,5 @@
 FROM golang:latest
 
-WORKDIR /root/
+WORKDIR /root
 
 ADD ./apiserver /root
-
-CMD ["/usr/local/go/bin/go", "mod", "init", "m"]
