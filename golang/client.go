@@ -5,14 +5,21 @@ import (
 	"log"
 	"net"
 	"os"
-	"m/client"
 	"m/args"
 	"m/data"
+	"bufio"
 )
 
 var (
 	dest data.Socket
 )
+
+var sc = bufio.NewScanner(os.Stdin)
+
+func nextLine() string {
+	sc.Scan()
+	return sc.Text()
+}
 
 func main() {
 	// whether Number of Command Line variable is correct or not
@@ -34,5 +41,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	client.Response(os.Stdout, conn)
+	str := nextLine()
+
+	_, err = conn.Write([]byte(str))
+    if err != nil {
+        log.Fatal(err)
+    }
+
+	buf := make([]byte, 1024)
+	count, err := conn.Read(buf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(buf[:count]))
 }
