@@ -4,4 +4,4 @@ WORKDIR /root/
 
 ADD ./apiserver /root
 
-CMD ["/usr/local/go/bin/go", "mod", "init"]
+CMD ["/usr/local/go/bin/go", "mod", "init", "m"]
