@@ -6,22 +6,14 @@ import (
 	"os"
 	"m/args"
 	"m/data"
-	"log"
+	"m/error"
 	"strings"
 	"os/exec"
-//	"bufio"
 )
 
 var (
 	self data.Socket
 )
-
-//var sc = bufio.NewScanner(os.Stdin)
-
-//func nextLine() string {
-//	sc.Scan()
-//	return sc.Text()
-//}
 
 func main() {
 	// whether Number of Command Line variable is correct or not
@@ -39,26 +31,18 @@ func main() {
 	}
 
 	tcpAddr, err := net.ResolveTCPAddr("tcp", self.Ip + ":" + self.Port)
-	if err != nil {
-		log.Fatal(err)
-	}
+	error.ErrorLog(err)
 
 	listener, err := net.ListenTCP("tcp", tcpAddr)
-	if err != nil {
-		log.Fatal(err)
-	}
+	error.ErrorLog(err)
 
 	for {
 		conn, err := listener.Accept()
-		if err != nil {
-			log.Fatal(err)
-		}
+		error.ErrorLog(err)
 
 		buf := make([]byte, 1024)
 		count, err := conn.Read(buf)
-		if err != nil {
-			log.Fatal(err)
-		}
+		error.ErrorLog(err)
 		fmt.Println(string(buf[:count]))
 
 		str := strings.Split(string(buf[:count]), " ")
@@ -66,6 +50,7 @@ func main() {
 		stdin, _ := cmd.StdinPipe()
 		stdin.Close()
 		out, err := cmd.Output()
+		fmt.Printf("From %s:%s\n", self.Ip, self.Port)
 		if err != nil {
 			fmt.Println("Error\n")
 			fmt.Printf("%s\n", err)
@@ -74,11 +59,8 @@ func main() {
 			fmt.Printf("%s", out)
 		}
 
-//		_, err = conn.Write([]byte(string(buf[:count])))
 		_, err = conn.Write([]byte(string(out)))
-		if err != nil {
-			log.Fatal(err)
-		}
+		error.ErrorLog(err)
 		conn.Close()
 	}
 }
