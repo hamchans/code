@@ -4,3 +4,4 @@ WORKDIR /root
 
 ADD ./apiserver /root
 
+RUN apt install nano -y
